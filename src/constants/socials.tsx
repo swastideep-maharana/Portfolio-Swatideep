@@ -1,7 +1,8 @@
 import {
   IconBrandLinkedin,
   IconBrandTwitter,
-  IconBrandYoutube,
+  IconBrandGithub,
+  IconMail,
 } from "@tabler/icons-react";
 
 export const socials = [
@@ -16,13 +17,13 @@ export const socials = [
     icon: IconBrandLinkedin,
   },
   {
-    href: "swastideep67maharana@gmail.com",
+    href: "mailto:swastideep67maharana@gmail.com",
     label: "Gmail",
-    icon: IconBrandYoutube,
+    icon: IconMail,
   },
   {
     href: "https://github.com/swastideep-maharana?tab=repositories",
     label: "Github",
-    icon: IconBrandYoutube,
+    icon: IconBrandGithub,
   },
 ];

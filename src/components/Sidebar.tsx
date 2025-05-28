@@ -19,20 +19,21 @@ const SidebarHeader = () => {
   return (
     <div className="px-4 py-4">
       <Link href="/" className="flex items-center space-x-4 group">
-        <div className="relative w-12 h-12 rounded-lg overflow-hidden ring-2 ring-purple-100 dark:ring-purple-900/30 group-hover:ring-purple-200 dark:group-hover:ring-purple-800/30 transition-all duration-300">
+        <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden ring-2 ring-indigo-100 dark:ring-indigo-900/30 group-hover:ring-indigo-200 dark:group-hover:ring-indigo-800/30 transition-all duration-300">
           <Image
             src="/SwastideepProfile.png"
             alt="Swastideep Maharana"
             fill
+            sizes="(max-width: 640px) 40px, 48px"
             className="object-cover transition-transform duration-300 group-hover:scale-110"
             priority
           />
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-base text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+          <span className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors tracking-normal">
             Swastideep Maharana
           </span>
-          <span className="text-sm text-gray-500 dark:text-gray-300">
+          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-300 tracking-normal">
             Full Stack Developer
           </span>
         </div>
@@ -70,13 +71,13 @@ const Navigation = ({
             href={link.href}
             onClick={handleClick}
             className={twMerge(
-              "group text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-150 flex items-center justify-between py-3 px-4 rounded-lg text-base hover:bg-purple-50/50 dark:hover:bg-purple-900/10",
+              "group text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-150 flex items-center justify-between py-3 px-4 rounded-lg text-sm sm:text-base hover:bg-indigo-50/50 dark:hover:bg-indigo-900/10 tracking-normal",
               isActive(link.href) &&
-                "bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 font-medium"
+                "bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 font-medium"
             )}
           >
             <div className="flex items-center space-x-3">
-              <link.icon className="h-5 w-5 flex-shrink-0 text-purple-500 dark:text-purple-400" />
+              <link.icon className="h-5 w-5 flex-shrink-0 text-indigo-500 dark:text-indigo-400" />
               <span className="font-medium">{link.label}</span>
             </div>
             <motion.div
@@ -87,7 +88,7 @@ const Navigation = ({
               }}
               transition={{ duration: 0.2 }}
             >
-              <IconChevronRight className="h-4 w-4 text-purple-400 dark:text-purple-500" />
+              <IconChevronRight className="h-4 w-4 text-indigo-400 dark:text-indigo-500" />
             </motion.div>
           </Link>
         </motion.div>
@@ -101,7 +102,7 @@ const Navigation = ({
       >
         <Heading
           as="p"
-          className="text-sm font-medium text-gray-500 dark:text-gray-300 px-4 mb-3"
+          className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-300 px-4 mb-3 tracking-normal"
         >
           Connect
         </Heading>
@@ -116,10 +117,10 @@ const Navigation = ({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-150 flex items-center justify-between py-3 px-4 rounded-lg text-base hover:bg-purple-50/50 dark:hover:bg-purple-900/10"
+              className="group text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-all duration-150 flex items-center justify-between py-3 px-4 rounded-lg text-sm sm:text-base hover:bg-indigo-50/50 dark:hover:bg-indigo-900/10 tracking-normal"
             >
               <div className="flex items-center space-x-3">
-                <link.icon className="h-5 w-5 flex-shrink-0 text-purple-500 dark:text-purple-400" />
+                <link.icon className="h-5 w-5 flex-shrink-0 text-indigo-500 dark:text-indigo-400" />
                 <span className="font-medium">{link.label}</span>
               </div>
               <motion.div
@@ -130,7 +131,7 @@ const Navigation = ({
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <IconChevronRight className="h-4 w-4 text-purple-400 dark:text-purple-500" />
+                <IconChevronRight className="h-4 w-4 text-indigo-400 dark:text-indigo-500" />
               </motion.div>
             </Link>
           </motion.div>
@@ -171,7 +172,7 @@ export const Sidebar = () => {
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="fixed lg:sticky top-0 left-0 z-[100] bg-white/80 dark:bg-black/90 backdrop-blur-md w-[280px] lg:w-[240px] xl:w-[260px] h-screen flex flex-col justify-between border-r border-purple-100/50 dark:border-purple-900/30 shadow-lg dark:shadow-purple-900/5"
+            className="fixed lg:sticky top-0 left-0 z-[100] bg-white/95 dark:bg-black/95 backdrop-blur-md w-[280px] lg:w-[240px] xl:w-[260px] h-screen flex flex-col justify-between border-r border-indigo-100/50 dark:border-indigo-900/30 shadow-lg dark:shadow-indigo-900/5"
           >
             <div className="flex-1 overflow-y-auto relative">
               <div className="space-y-4 py-4">
@@ -185,11 +186,11 @@ export const Sidebar = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed lg:hidden bottom-6 right-6 h-9 w-9 bg-white/80 dark:bg-black/90 backdrop-blur-md border border-purple-100/50 dark:border-purple-900/30 rounded-full flex items-center justify-center z-[200] shadow-lg hover:shadow-xl transition-all duration-300"
+        className="fixed lg:hidden bottom-6 right-6 h-12 w-12 bg-gradient-to-r from-indigo-600 via-violet-500 to-fuchsia-500 text-white rounded-full flex items-center justify-center z-[200] shadow-lg hover:shadow-xl transition-all duration-300"
         onClick={handleToggle}
         disabled={isTransitioning}
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+        <IconLayoutSidebarRightCollapse className="h-5 w-5" />
       </motion.button>
     </>
   );
