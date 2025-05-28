@@ -176,7 +176,7 @@ export const Hero = () => {
                 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
               >
-                <span className="block">Hi, I'm</span>
+                <span className="block">Hi, I&apos;m</span>
                 <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 dark:from-purple-400 dark:via-blue-400 dark:to-purple-400">
                   Swastideep Maharana
                 </span>

@@ -17,8 +17,9 @@ export default function ContactPage() {
         <span className="text-4xl">✉️</span>
         <Heading className="font-black">Get in Touch</Heading>
         <Paragraph className="max-w-xl">
-          Have a project in mind or want to collaborate? I'd love to hear from you! 
-          Feel free to reach out through the form below or connect with me on social media.
+          Have a project in mind or want to collaborate? I&apos;d love to hear
+          from you! Feel free to reach out through the form below or connect
+          with me on social media.
         </Paragraph>
       </div>
       <div className="mt-8">

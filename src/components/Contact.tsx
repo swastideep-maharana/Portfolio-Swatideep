@@ -156,8 +156,8 @@ export const Contact = () => {
             Get in Touch
           </Heading>
           <Paragraph className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Let's discuss your project and see how we can work together to bring
-            your ideas to life.
+            Let&apos;s discuss your project and see how we can work together to
+            bring your ideas to life.
           </Paragraph>
         </motion.div>
 

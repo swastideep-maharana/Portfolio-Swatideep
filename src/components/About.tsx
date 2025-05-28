@@ -87,9 +87,10 @@ export const About = () => {
             </div>
 
             <Paragraph className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a passionate Full Stack Developer with a keen eye for creating
-              elegant solutions in the least amount of time. I specialize in
-              building responsive web applications using modern technologies.
+              I&apos;m a passionate Full Stack Developer with a keen eye for
+              creating elegant solutions in the least amount of time. I
+              specialize in building responsive web applications using modern
+              technologies.
             </Paragraph>
 
             <Paragraph className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">

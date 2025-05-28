@@ -47,7 +47,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gradient whitespace-nowrap w-full"
           >
-            Hello there! I'm {NAME}
+            Hello there! I&apos;m {NAME}
           </motion.div>
 
           <motion.div
