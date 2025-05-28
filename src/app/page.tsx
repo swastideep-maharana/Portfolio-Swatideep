@@ -82,7 +82,9 @@ export default function Home() {
               as="h1"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight"
             >
-              <span className="text-gray-900 dark:text-white">Hi, I'm </span>
+              <span className="text-gray-900 dark:text-white">
+                Hi, I&apos;m{" "}
+              </span>
               <Highlight className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
                 {NAME}
               </Highlight>

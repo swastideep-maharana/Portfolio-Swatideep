@@ -221,11 +221,7 @@ export const IntroAnimation = () => {
                 text="Swastideep Maharana"
                 delay={0.7}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
-              >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white">
-                  Swastideep Maharana
-                </span>
-              </AnimatedText>
+              />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
