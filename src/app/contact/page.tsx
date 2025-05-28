@@ -7,7 +7,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact | Swastideep Maharana",
   description:
-    "Get in touch with Swastideep Maharana - a Full Stack Developer specializing in MERN stack development. Let's discuss your next project!",
+    "Get in touch with Swastideep Maharana - a Full Stack Developer specializing in MERN stack development. Let&apos;s discuss your next project!",
 };
 
 export default function ContactPage() {
