@@ -2,12 +2,26 @@ import { Product } from "@/types/products";
 
 export const products: Product[] = [
   {
+    title: "Storelt",
+    description:
+      "Storelt is a powerful, easy-to-use web application that allows you to upload, share, and manage your documents seamlessly. Whether you're looking for something similar to Google Drive or Dropbox, Storelt has you covered! Features include document upload, sharing via email, real-time search, secure OTP login, and a user-friendly UI built with Tailwind CSS.",
+    thumbnail: "/storelt.png",
+    images: ["/storelt.png"],
+    href: "https://storelt-drive.vercel.app/sign-in",
+    github: "https://github.com/swastideep-maharana/Storelt-Drive",
+    stack: ["Next.js", "TypeScript", "Appwrite", "Tailwind CSS", "Vercel"],
+    slug: "storelt",
+    content: `Storelt is your personal document manager, offering seamless upload, sharing, and management of files. With secure OTP authentication, real-time search, and a clean UI, Storelt is the only store you need—just like Google Drive. [Live](https://storelt-drive.vercel.app/sign-in) | [GitHub](https://github.com/swastideep-maharana/Storelt-Drive)`,
+  },
+  {
     title: "AI Tutor - Learning Companion",
     description:
       "An AI-powered learning platform that provides personalized tutoring and voice interaction. Features include interactive learning sessions, voice-enabled AI companions, and adaptive learning paths.",
     thumbnail: "/Ai-Tutor.png",
     images: ["/Ai-Tutor.png"],
     href: "https://ai-voice-agent-interview-prep-4ztc.vercel.app",
+    github:
+      "https://github.com/swastideep-maharana/AI-Voice-Agent-Interview-Prep",
     stack: ["Next.js", "TypeScript", "OpenAI", "Tailwind CSS", "Vercel"],
     slug: "ai-tutor",
     content: `AI Tutor is an innovative learning platform that leverages artificial intelligence to provide personalized educational experiences. The platform features voice-enabled AI companions that adapt to each user's learning style, offering interactive sessions and real-time feedback. Built with Next.js and TypeScript, it provides a seamless and engaging learning environment for users of all levels.`,
@@ -19,9 +33,34 @@ export const products: Product[] = [
     thumbnail: "/tomato.png",
     images: ["/tomato.png"],
     href: "https://food-delivery-web-frontend-eexv.vercel.app",
+    github: "https://github.com/swastideep-maharana/Food-Delivery-Web-Frontend",
     stack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
     slug: "tomato",
     content: `Tomato is a comprehensive food delivery platform that connects users with their favorite restaurants. The application features real-time order tracking, secure payment processing, and an intuitive user interface. Users can browse restaurants, view menus, place orders, and track their delivery status in real-time.`,
+  },
+  {
+    title: "Movie-app",
+    description:
+      "A modern movie discovery web application that helps users find trending and popular movies with ease. Features include trending movies, search functionality, and a visually appealing UI. Built with React and Vite for fast performance.",
+    thumbnail: "/movie app.png",
+    images: ["/movie app.png"],
+    href: "https://movie-app-nu-ruddy.vercel.app/",
+    github: "https://github.com/swastideep-maharana/Movie-app",
+    stack: ["React", "Vite", "JavaScript", "CSS"],
+    slug: "movie-app",
+    content: `Movie-app is a sleek and user-friendly platform for discovering trending and popular movies. Users can search through thousands of movies, view trending lists, and enjoy a beautiful, responsive interface. [Live](https://movie-app-nu-ruddy.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/Movie-app)`,
+  },
+  {
+    title: "ChatterBox - Real-time Chat Application",
+    description:
+      "A modern real-time chat application supporting individual and group conversations. Features include instant messaging, user authentication, message history, and real-time notifications.",
+    thumbnail: "/chatterbox.png",
+    images: ["/chatterbox.png"],
+    href: "https://chatterbox-1qmd.onrender.com",
+    github: "https://github.com/swastideep-maharana/ChatterBox",
+    stack: ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
+    slug: "chatterbox",
+    content: `ChatterBox is a feature-rich real-time chat application that enables seamless communication between users. The platform supports both individual and group conversations, with features like message history, real-time notifications, and user authentication. Built with modern web technologies for optimal performance and reliability.`,
   },
   {
     title: "BinkeyIt - E-commerce Platform",
@@ -44,17 +83,6 @@ export const products: Product[] = [
     stack: ["React", "TypeScript", "MongoDB", "AI Integration"],
     slug: "buildix",
     content: `BuildIX is an innovative platform that revolutionizes web application development through AI integration. Users can create full-stack applications using an intuitive drag-and-drop interface, with AI-powered code generation and real-time preview capabilities. The platform makes web development accessible to users of all skill levels.`,
-  },
-  {
-    title: "ChatterBox - Real-time Chat Application",
-    description:
-      "A modern real-time chat application supporting individual and group conversations. Features include instant messaging, user authentication, message history, and real-time notifications.",
-    thumbnail: "/chatterbox.png",
-    images: ["/chatterbox.png"],
-    href: "https://chatterbox-1qmd.onrender.com",
-    stack: ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
-    slug: "chatterbox",
-    content: `ChatterBox is a feature-rich real-time chat application that enables seamless communication between users. The platform supports both individual and group conversations, with features like message history, real-time notifications, and user authentication. Built with modern web technologies for optimal performance and reliability.`,
   },
   {
     title: "RespawinGalaxy - Gaming Website",

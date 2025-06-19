@@ -91,7 +91,7 @@ export const Products = () => {
                           Live Demo
                         </motion.a>
                         <motion.a
-                          href={`https://github.com/swastideep-maharana/${product.slug}`}
+                          href={product.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
