@@ -110,7 +110,7 @@ export default function Home() {
             className="mt-8"
           >
             <a
-              href="/SwastideepMaharana.pdf"
+              href="/Swastideep_resume.pdf"
               download
               className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 text-white font-medium hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
