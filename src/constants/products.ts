@@ -2,6 +2,18 @@ import { Product } from "@/types/products";
 
 export const products: Product[] = [
   {
+    title: "Pixxel-ai - AI Image Editor",
+    description:
+      " Pixxel-ai is a cutting-edge AI image editor that allows users to enhance and transform their images with ease. Features include AI-powered image enhancement, background removal, and a user-friendly interface built with Tailwind CSS.",
+    thumbnail: "/pixxel.png",
+    images: ["/pixxel.png"],
+    href: "https://pixxel-ai-image-editor.vercel.app/",
+    github: "https://github.com/swastideep-maharana/Pixxel-ai",
+    stack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    slug: "tomato",
+    content: `Pixxel-ai is an advanced AI image editor that simplifies the process of enhancing and transforming images. With features like AI-powered enhancement, background removal, and a sleek user interface, Pixxel-ai makes image editing accessible to everyone.  `,
+  },
+  {
     title: "Storelt",
     description:
       "Storelt is a powerful, easy-to-use web application that allows you to upload, share, and manage your documents seamlessly. Whether you're looking for something similar to Google Drive or Dropbox, Storelt has you covered! Features include document upload, sharing via email, real-time search, secure OTP login, and a user-friendly UI built with Tailwind CSS.",
@@ -26,18 +38,7 @@ export const products: Product[] = [
     slug: "ai-tutor",
     content: `AI Tutor is an innovative learning platform that leverages artificial intelligence to provide personalized educational experiences. The platform features voice-enabled AI companions that adapt to each user's learning style, offering interactive sessions and real-time feedback. Built with Next.js and TypeScript, it provides a seamless and engaging learning environment for users of all levels.`,
   },
-  {
-    title: "Tomato - Food Ordering & Delivery",
-    description:
-      "A full-stack food delivery web application with real-time order tracking, user authentication, and seamless payment integration. Features include restaurant listings, menu management, and order history.",
-    thumbnail: "/tomato.png",
-    images: ["/tomato.png"],
-    href: "https://food-delivery-web-frontend-eexv.vercel.app",
-    github: "https://github.com/swastideep-maharana/Food-Delivery-Web-Frontend",
-    stack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-    slug: "tomato",
-    content: `Tomato is a comprehensive food delivery platform that connects users with their favorite restaurants. The application features real-time order tracking, secure payment processing, and an intuitive user interface. Users can browse restaurants, view menus, place orders, and track their delivery status in real-time.`,
-  },
+  
   {
     title: "Movie-app",
     description:
