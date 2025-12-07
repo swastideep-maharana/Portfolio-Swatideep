@@ -13,12 +13,15 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      // FIXED: Merged duplicate fontFamily keys into one block
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-      },
-      fontFamily: {
-        sans: ["var(--font-inter)"],
-        heading: ["var(--font-heading)"],
+        sans: [
+          "var(--font-geist-sans)",
+          "var(--font-inter)",
+          "system-ui",
+          "sans-serif",
+        ],
+        heading: ["var(--font-heading)", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
