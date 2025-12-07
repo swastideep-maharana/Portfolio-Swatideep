@@ -1,37 +1,43 @@
 import { Hero } from "@/components/sections/Hero";
 import { Products } from "@/components/Products";
 import { TechStack } from "@/components/TechStack";
-import { BentoGrid } from "@/components/BentoGrid";
+import { AboutMe } from "@/components/AboutMe";
 
 export default function Home() {
   return (
     <>
       <Hero />
       
-      {/* Projects Section */}
-      <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-32">
-        <div className="w-full max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.02em] text-neutral-900 dark:text-white mb-16">
-            Featured Projects
-          </h2>
+      {/* Featured Projects */}
+      <section id="projects" className="w-full py-24 md:py-32">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="flex flex-col mb-16">
+            <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
+              Featured Work
+            </h2>
+            <div className="h-1 w-20 bg-orange-500 rounded-full" />
+          </div>
           <Products />
         </div>
       </section>
 
-      {/* About Me - Bento Grid Section */}
-      <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-32">
-        <div className="w-full max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.02em] text-neutral-900 dark:text-white mb-16">
-            About Me
-          </h2>
-          <BentoGrid />
+      {/* Tech Stack */}
+      <section className="w-full py-24 md:py-32 bg-neutral-100 dark:bg-neutral-900/20">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+           <TechStack />
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-32">
-        <div className="w-full max-w-7xl mx-auto">
-          <TechStack />
+      {/* About Me */}
+      <section id="about" className="w-full py-24 md:py-32">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="flex flex-col mb-16">
+            <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
+              About Me
+            </h2>
+            <div className="h-1 w-20 bg-orange-500 rounded-full" />
+          </div>
+          <AboutMe />
         </div>
       </section>
     </>

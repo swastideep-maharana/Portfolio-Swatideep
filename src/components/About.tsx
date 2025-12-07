@@ -41,24 +41,10 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-black"
+      className="py-20 md:py-28 relative overflow-hidden bg-transparent"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-black dark:via-black dark:to-black" />
-
-      {/* Accent Lines */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent dark:via-purple-500/10"
-        animate={{
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.02, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {/* Background Elements - Removed for cleaner layout */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -73,7 +59,7 @@ export const About = () => {
             <div>
               <Heading
                 as="h2"
-                className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 dark:from-purple-400 dark:via-blue-400 dark:to-purple-400"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient"
               >
                 About Me
               </Heading>
@@ -82,7 +68,7 @@ export const About = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="h-1 w-24 bg-gradient-to-r from-purple-500 to-blue-500 dark:from-purple-400 dark:to-blue-400 rounded-full mt-4"
+                className="h-1 w-24 bg-neutral-900 dark:bg-white rounded-full mt-4"
               />
             </div>
 
@@ -139,7 +125,7 @@ export const About = () => {
             <div className="relative aspect-square">
               {/* Decorative Elements */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-black dark:to-black rounded-2xl"
+                className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800 rounded-2xl"
                 animate={{
                   rotate: [0, 360],
                 }}

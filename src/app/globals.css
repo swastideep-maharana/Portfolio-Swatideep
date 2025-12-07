@@ -4,204 +4,134 @@
 
 @layer base {
   :root {
-    --background: 30 100% 98%; /* Creamy Off-White */
-    --foreground: 0 0% 10%;
-    --accent-blue: 217 91% 60%;
-    --accent-indigo: 239 84% 67%;
-    --accent-violet: 258 90% 66%;
-    --accent-cyan: 188 94% 43%;
-  }
+    /* Premium Zinc Palette - Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+ 
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+ 
+    --radius: 0.75rem;
+  }
+ 
   .dark {
-    --background: 0 0% 1.2%; /* Deepest Midnight Black #030303 */
+    /* Deep Zinc Palette - Dark Mode */
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+ 
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+ 
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
 @layer base {
   * {
-    @apply border-white/10 dark:border-white/10;
+    @apply border-border;
   }
-  
-  html {
-    @apply overflow-x-hidden;
-    scroll-behavior: smooth;
-  }
-  
-  html.lenis {
-    height: auto;
-  }
-  
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-  
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-  
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-  
-  .lenis.lenis-scrolling iframe {
-    pointer-events: none;
-  }
-  
   body {
-    @apply bg-[#FDFBF7] dark:bg-[#030303] text-neutral-900 dark:text-white antialiased;
+    @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  /* Typography - Geist/Inter with tight tracking */
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-[-0.02em] font-bold;
-    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
-  /* Glassmorphism */
+  /* Modern Glassmorphism */
   .glass {
-    @apply bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-neutral-200/20 dark:border-white/10;
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
   }
   
-  .glass-hover {
-    @apply glass hover:bg-white/20 dark:hover:bg-white/10 hover:border-neutral-300/30 dark:hover:border-white/20 transition-all duration-300;
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-lg border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
   }
 
-  /* Premium Button */
-  .btn-primary {
-    @apply px-6 py-3 rounded-full bg-blue-500 text-white font-medium;
-    @apply hover:bg-blue-400 hover:scale-[1.02] hover:brightness-110;
-    @apply transition-all duration-200;
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500/50;
+  /* Sophisticated Gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 via-neutral-600 to-neutral-900 dark:from-white dark:via-neutral-400 dark:to-white;
   }
 
-  .btn-secondary {
-    @apply px-6 py-3 rounded-full border border-neutral-300/30 dark:border-white/20 text-neutral-900 dark:text-white font-medium;
-    @apply hover:bg-neutral-100 dark:hover:bg-white/5 hover:border-neutral-400/40 dark:hover:border-white/30 hover:scale-[1.02];
-    @apply transition-all duration-200;
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 
-  /* Typography */
-  .text-heading {
-    @apply text-neutral-900 dark:text-white font-bold tracking-[-0.02em];
-  }
-
-  .text-body {
-    @apply text-neutral-600 dark:text-neutral-400 leading-relaxed;
-  }
-
-  /* Custom Scrollbar */
+  /* Scrollbar Polish */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
-
+  
   ::-webkit-scrollbar-track {
-    background: transparent;
+    @apply bg-transparent;
   }
-
+  
   ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
+    @apply bg-orange-200 dark:bg-neutral-800 rounded-full transition-colors;
   }
-
+  
   ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    @apply bg-orange-400 dark:bg-orange-700;
   }
-
-  /* Hide scrollbar on mobile */
-  @media (max-width: 768px) {
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    
-    * {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  }
-
-  /* Firefox scrollbar */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #333 transparent;
-  }
-
-  @media (max-width: 768px) {
-    * {
-      scrollbar-width: none;
-    }
-  }
-
-  /* Selection Color */
+  
+  /* Selection Style */
   ::selection {
-    background-color: #3b82f6;
-    color: #000;
-  }
-
-  ::-moz-selection {
-    background-color: #3b82f6;
-    color: #000;
-  }
-
-  /* Smooth Image Loading - Blur Up Effect */
-  .image-blur-up {
-    filter: grayscale(100%) blur(20px);
-    transition: filter 0.5s ease-in-out;
-  }
-
-  .image-blur-up.loaded {
-    filter: grayscale(0%) blur(0);
-  }
-
-  /* Spotlight Effect */
-  .spotlight-border {
-    position: relative;
-  }
-
-  .spotlight-border::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    background: radial-gradient(
-      circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(59, 130, 246, 0.4) 0%,
-      transparent 60%
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .spotlight-border:hover::before {
-    opacity: 1;
+    @apply bg-orange-500/30 text-orange-900 dark:text-orange-100;
   }
 }
 
-/* Vertical Scroll Animation for Bento Grid */
-@keyframes scroll-vertical {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.animate-scroll-vertical {
-  animation: scroll-vertical 15s linear infinite;
-}
-
-.mask-gradient-vertical {
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

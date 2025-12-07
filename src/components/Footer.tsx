@@ -60,13 +60,13 @@ export const Footer = () => {
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-500 dark:to-indigo-600 flex items-center justify-center shadow-2xl border-2 border-white/20">
+          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-2xl border-2 border-white/20">
             <span className="text-xs font-bold text-white">Email Me</span>
           </div>
         </motion.div>
       )}
 
-      <footer className="relative py-20 md:py-32 border-t border-neutral-200/20 dark:border-white/10 overflow-hidden">
+      <footer className="relative py-20 md:py-32 border-t border-neutral-200/50 dark:border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-12 md:gap-16">
             {/* Giant Contact Statement */}
@@ -87,7 +87,7 @@ export const Footer = () => {
                   className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[6vw] font-black tracking-tighter text-neutral-900 dark:text-white leading-none transition-all duration-300"
                   style={{
                     background: isHovered
-                      ? "linear-gradient(90deg, #3b82f6 0%, #6366f1 100%)"
+                      ? "linear-gradient(90deg, #f97316 0%, #ea580c 100%)"
                       : "transparent",
                     WebkitBackgroundClip: isHovered ? "text" : "initial",
                     WebkitTextFillColor: isHovered ? "transparent" : "initial",
@@ -122,7 +122,7 @@ export const Footer = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="text-neutral-600 dark:text-neutral-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="text-neutral-600 dark:text-neutral-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
                     >
                       <Icon className="w-6 h-6" />
                     </motion.a>

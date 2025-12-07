@@ -13,13 +13,15 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
-      // FIXED: Merged duplicate fontFamily keys into one block
       fontFamily: {
         sans: [
-          "var(--font-geist-sans)",
-          "var(--font-inter)",
+          "var(--font-outfit)",
           "system-ui",
           "sans-serif",
+        ],
+        serif: [
+          "var(--font-playfair)",
+          "serif",
         ],
         heading: ["var(--font-heading)", "sans-serif"],
       },

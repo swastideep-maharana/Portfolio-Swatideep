@@ -69,16 +69,18 @@ const SocialLink = ({
       transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
       className="relative group"
     >
-      <div className="relative bg-white dark:bg-black rounded-2xl p-6 border border-purple-100/50 dark:border-purple-900/10 shadow-sm hover:shadow-md transition-all duration-300">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 dark:from-purple-500/5 dark:to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative bg-white dark:bg-black rounded-2xl p-6 border border-neutral-200 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-orange-500/30">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="relative flex items-center justify-between">
           <ButtonCTA href={link.href} variant={link.variant} className="flex-1">
-            <link.icon className="w-5 h-5 mr-2" />
-            {link.label}
+            <link.icon className="w-5 h-5 mr-2 group-hover:text-orange-500 transition-colors" />
+            <span className="group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
+                 {link.label}
+            </span>
           </ButtonCTA>
           <button
             onClick={handleCopy}
-            className="ml-2 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            className="ml-2 p-2 text-gray-500 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors"
             title="Copy to clipboard"
           >
             {copied ? (
@@ -97,51 +99,8 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden bg-transparent"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-black dark:via-black dark:to-black" />
-
-      {/* Accent Lines */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent dark:via-purple-500/10"
-        animate={{
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.02, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-blue-300/10 dark:bg-blue-500/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.5, 0.8, 0.5],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-300/10 dark:bg-purple-500/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.8, 0.5, 0.8],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -152,10 +111,11 @@ export const Contact = () => {
         >
           <Heading
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 dark:from-purple-400 dark:via-blue-400 dark:to-purple-400"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white"
           >
             Get in Touch
           </Heading>
+          <div className="h-1 w-20 bg-orange-500 rounded-full mx-auto mt-6 mb-6" />
           <Paragraph className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Let&apos;s discuss your project and see how we can work together to
             bring your ideas to life.
@@ -170,7 +130,7 @@ export const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mx-auto mb-16"
         >
-          <div className="glass rounded-2xl p-6 md:p-8 border border-white/10">
+          <div className="glass rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 hover:border-orange-500/20 transition-colors duration-500">
             <ContactForm />
           </div>
         </motion.div>

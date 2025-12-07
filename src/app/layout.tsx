@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScrollWrapper } from "@/components/layout/SmoothScrollWrapper";
 import { FloatingDock } from "@/components/layout/FloatingDock";
 import { Footer } from "@/components/Footer";
 import { DeepAuroraBackground } from "@/components/layout/DeepAuroraBackground";
-import { CustomCursor } from "@/components/layout/CustomCursor";
+import { SamuraiEmbers } from "@/components/ui/SamuraiEmbers";
+import { IntroSplash } from "@/components/ui/IntroSplash";
 import { Toaster } from "sonner";
+
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Swastideep Maharana - Portfolio",
   description: "Full Stack Developer Portfolio",
-  icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
-  },
   openGraph: {
     title: "Swastideep Maharana - Full Stack Developer",
     description: "Full Stack Developer crafting elegant solutions with modern technologies",
@@ -49,17 +57,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.variable} font-sans antialiased`}
+        className={`${outfit.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <IntroSplash />
+        
         <ThemeProvider>
           <DeepAuroraBackground />
-          <CustomCursor />
+          <SamuraiEmbers />
           <SmoothScrollWrapper>
-            <main className="min-h-screen w-full relative z-10">
-              {children}
-            </main>
-            <FloatingDock />
-            <Footer />
+            {/* Main Application Frame - The "Window" Look */}
+            {/* Optimization: Increased opacity to 80% and used neutral-950 to fix 'faded' look/improve contrast */}
+            <div className="p-2 sm:p-4 md:p-6 min-h-screen flex flex-col">
+              <main className="flex-1 w-full relative z-10 bg-white/80 dark:bg-neutral-950/80 border border-neutral-200/50 dark:border-white/5 rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl ring-1 ring-neutral-900/5 dark:ring-white/5 transition-colors duration-500">
+                {children}
+                <Footer />
+              </main>
+              <FloatingDock />
+            </div>
           </SmoothScrollWrapper>
           <Toaster position="top-right" richColors />
         </ThemeProvider>

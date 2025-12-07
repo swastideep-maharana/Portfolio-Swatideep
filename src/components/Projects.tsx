@@ -720,51 +720,16 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-black"
+      className="py-20 md:py-28 relative overflow-hidden bg-transparent"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-black dark:via-black dark:to-black" />
+      {/* Background Elements - Removed for cleaner layout */}
 
       {/* Accent Lines */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent dark:via-purple-500/10"
-        animate={{
-          opacity: [0.5, 1, 0.5],
-          scale: [1, 1.02, 1],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+
 
       {/* Decorative Elements */}
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/5 dark:bg-purple-500/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-500/5 dark:bg-blue-500/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -776,7 +741,7 @@ export const Projects = () => {
         >
           <Heading
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 dark:from-purple-400 dark:via-blue-400 dark:to-purple-400"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient"
           >
             Featured Projects
           </Heading>

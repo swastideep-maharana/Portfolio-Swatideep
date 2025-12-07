@@ -1,98 +1,83 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { techStack } from "@/constants/techStack";
-import Image from "next/image";
+import { IconBrandReact, IconBrandNodejs, IconBrandNextjs, IconBrandTypescript, IconBrandTailwind, IconDatabase, IconBrandDocker, IconBrandAws, IconBrandGit, IconBrandFigma } from "@tabler/icons-react";
 
 export const TechStack = () => {
-  // Duplicate for seamless infinite scroll
-  const duplicatedTechStack = [...techStack, ...techStack];
+  const technologies = [
+    {
+      category: "Frontend",
+      skills: [
+        { name: "React", icon: IconBrandReact, color: "text-[#61DAFB] group-hover:text-[#61DAFB]" },
+        { name: "Next.js", icon: IconBrandNextjs, color: "text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-white" },
+        { name: "TypeScript", icon: IconBrandTypescript, color: "text-[#3178C6] group-hover:text-[#3178C6]" },
+        { name: "Tailwind CSS", icon: IconBrandTailwind, color: "text-[#06B6D4] group-hover:text-[#06B6D4]" },
+        { name: "Figma", icon: IconBrandFigma, color: "text-[#F24E1E] group-hover:text-[#F24E1E]" },
+      ],
+    },
+    {
+      category: "Backend & Infrastructure",
+      skills: [
+        { name: "Node.js", icon: IconBrandNodejs, color: "text-[#339933] group-hover:text-[#339933]" },
+        { name: "Database", icon: IconDatabase, color: "text-[#47A248] group-hover:text-[#47A248]" }, 
+        { name: "Docker", icon: IconBrandDocker, color: "text-[#2496ED] group-hover:text-[#2496ED]" },
+        { name: "AWS", icon: IconBrandAws, color: "text-[#FF9900] group-hover:text-[#FF9900]" },
+        { name: "Git", icon: IconBrandGit, color: "text-[#F05032] group-hover:text-[#F05032]" },
+      ],
+    },
+  ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ type: "spring", stiffness: 100, damping: 12, duration: 0.4 }}
-      className="space-y-12"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: 20, scale: 0.9 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    <div className="space-y-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 100, damping: 12, duration: 0.4 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white"
+        transition={{ duration: 0.5 }}
+        className="text-center"
       >
-        Tech Stack
-      </motion.h2>
+        <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
+          Tech Stack
+        </h2>
+        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+          Built with the latest technologies for maximum performance and scalability.
+        </p>
+      </motion.div>
 
-      {/* Enhanced Marquee with 3D Effect */}
-      <div className="relative overflow-hidden py-12">
-        {/* Fade Gradients */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FDFBF7] dark:from-[#050505] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FDFBF7] dark:from-[#050505] to-transparent z-10 pointer-events-none" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {technologies.map((group, groupIndex) => (
+          <motion.div
+            key={group.category}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
+            className="p-8 rounded-3xl bg-white/50 dark:bg-white/5 border border-neutral-200 dark:border-white/10 backdrop-blur-sm relative overflow-hidden group"
+          >
+             {/* Neon Glow on Card Hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent blur-xl" />
+                <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
+            </div>
 
-        {/* Scrolling Icons - Colorful and Blended */}
-        <div className="flex gap-16 animate-scroll hover:[animation-play-state:paused]">
-          {duplicatedTechStack.map((tech, index) => (
-            <motion.div
-              key={`${tech.name}-${index}`}
-              initial={{ opacity: 0, scale: 0.5, rotateY: -90 }}
-              whileInView={{ opacity: 0.6, scale: 1, rotateY: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 200, 
-                damping: 15,
-                delay: index * 0.05 
-              }}
-              whileHover={{ 
-                scale: 1.2, 
-                opacity: 1, 
-                rotateY: 10,
-                z: 50,
-                transition: { type: "spring", stiffness: 400, damping: 10 }
-              }}
-              className="flex-shrink-0 w-20 h-20 flex items-center justify-center cursor-pointer"
-              style={{ perspective: "1000px" }}
-            >
-              <motion.div 
-                className="relative w-full h-full rounded-2xl p-3 bg-white/5 dark:bg-white/5 backdrop-blur-sm"
-                whileHover={{ 
-                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)",
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                }}
-              >
-                <Image
-                  src={tech.icon}
-                  alt={tech.name}
-                  fill
-                  sizes="80px"
-                  loading="lazy"
-                  className="object-contain transition-all duration-300 image-blur-up"
-                  onLoad={(e) => {
-                    e.currentTarget.classList.add("loaded");
-                  }}
-                />
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
+            <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-8 relative z-10">
+              {group.category}
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 relative z-10">
+              {group.skills.map((skill, skillIndex) => (
+                <div key={skill.name} className="flex flex-col items-center gap-3 group/skill cursor-pointer">
+                  <div className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 shadow-sm transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:bg-neutral-50 dark:group-hover/skill:bg-white/10 group-hover/skill:border-orange-500/30 group-hover/skill:shadow-[0_0_15px_rgba(251,146,60,0.2)] ${skill.color}`}>
+                    <skill.icon className="w-8 h-8" stroke={1.5} />
+                  </div>
+                  <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white transition-colors">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
-
-      <style jsx global>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          animation: scroll 25s linear infinite;
-        }
-      `}</style>
-    </motion.div>
+    </div>
   );
 };

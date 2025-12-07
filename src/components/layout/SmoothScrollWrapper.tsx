@@ -14,26 +14,26 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
 
   useEffect(() => {
     // Check if mobile device
+    // We want to DISABLE smooth scroll on mobile because native scrolling 
+    // is always more performant and natural on touch screens.
     const isMobile =
-      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+      typeof window !== "undefined" && 
+      (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
       window.innerWidth < 768 ||
-      "ontouchstart" in window;
+      "ontouchstart" in window);
 
-    // Disable smooth scroll on mobile for better performance
     if (isMobile) {
       return;
     }
 
-    // Initialize Lenis with premium settings
+    // Initialize Lenis with optimized settings
     const lenis = new Lenis({
-      lerp: 0.1,
-      smoothWheel: true,
-      // DELETED THE ERROR LINE HERE
+      lerp: 0.12, // Increased from 0.1 for snappier response
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
-      infinite: false,
+      smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
