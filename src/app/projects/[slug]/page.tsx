@@ -17,10 +17,37 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
   const product = products.find((p) => p.slug === slug) as Product | undefined;
+  
   if (product) {
+    const stackString = product.stack?.join(",") || "";
+    const baseUrl = "https://swastideep-maharana.vercel.app";
+    const ogImageUrl = `${baseUrl}/og?title=${encodeURIComponent(product.title)}${stackString ? `&stack=${encodeURIComponent(stackString)}` : ""}`;
+    
     return {
       title: product.title,
       description: product.description,
+      openGraph: {
+        title: product.title,
+        description: product.description,
+        url: `${baseUrl}/projects/${slug}`,
+        siteName: "Swastideep Maharana Portfolio",
+        images: [
+          {
+            url: ogImageUrl,
+            width: 1200,
+            height: 630,
+            alt: product.title,
+          },
+        ],
+        locale: "en_US",
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: product.title,
+        description: product.description,
+        images: [ogImageUrl],
+      },
     };
   } else {
     return {

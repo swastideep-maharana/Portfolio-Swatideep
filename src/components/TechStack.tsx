@@ -32,13 +32,13 @@ export const TechStack = () => {
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FDFBF7] dark:from-[#050505] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FDFBF7] dark:from-[#050505] to-transparent z-10 pointer-events-none" />
 
-        {/* Scrolling Icons with 3D Effect */}
+        {/* Scrolling Icons - Colorful and Blended */}
         <div className="flex gap-16 animate-scroll hover:[animation-play-state:paused]">
           {duplicatedTechStack.map((tech, index) => (
             <motion.div
               key={`${tech.name}-${index}`}
               initial={{ opacity: 0, scale: 0.5, rotateY: -90 }}
-              whileInView={{ opacity: 0.7, scale: 1, rotateY: 0 }}
+              whileInView={{ opacity: 0.6, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
               transition={{ 
                 type: "spring", 
@@ -47,9 +47,9 @@ export const TechStack = () => {
                 delay: index * 0.05 
               }}
               whileHover={{ 
-                scale: 1.3, 
+                scale: 1.2, 
                 opacity: 1, 
-                rotateY: 15,
+                rotateY: 10,
                 z: 50,
                 transition: { type: "spring", stiffness: 400, damping: 10 }
               }}
@@ -57,10 +57,10 @@ export const TechStack = () => {
               style={{ perspective: "1000px" }}
             >
               <motion.div 
-                className="relative w-full h-full glass rounded-2xl p-3"
+                className="relative w-full h-full rounded-2xl p-3 bg-white/5 dark:bg-white/5 backdrop-blur-sm"
                 whileHover={{ 
-                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
-                  borderColor: "rgba(59, 130, 246, 0.5)"
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
                 }}
               >
                 <Image
@@ -69,7 +69,10 @@ export const TechStack = () => {
                   fill
                   sizes="80px"
                   loading="lazy"
-                  className="object-contain brightness-0 dark:invert transition-all duration-300"
+                  className="object-contain transition-all duration-300 image-blur-up"
+                  onLoad={(e) => {
+                    e.currentTarget.classList.add("loaded");
+                  }}
                 />
               </motion.div>
             </motion.div>

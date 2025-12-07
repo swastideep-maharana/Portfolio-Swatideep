@@ -1,5 +1,9 @@
-export const isMobile = () => {
-  if (typeof window === "undefined") return false;
-  const width = window.innerWidth;
-  return width <= 1024;
-};
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+/**
+ * Utility function to merge Tailwind CSS classes
+ */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}

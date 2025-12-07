@@ -4,10 +4,17 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 30 100% 98%; /* Creamy Off-White */
+    --foreground: 0 0% 10%;
     --accent-blue: 217 91% 60%;
     --accent-indigo: 239 84% 67%;
+    --accent-violet: 258 90% 66%;
+    --accent-cyan: 188 94% 43%;
+  }
+
+  .dark {
+    --background: 0 0% 1.2%; /* Deepest Midnight Black #030303 */
+    --foreground: 0 0% 98%;
   }
 }
 
@@ -16,15 +23,47 @@
     @apply border-white/10 dark:border-white/10;
   }
   
+  html {
+    @apply overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+  
+  html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+  
   body {
-    @apply bg-[#FDFBF7] dark:bg-[#050505] text-neutral-900 dark:text-white antialiased transition-colors duration-300;
+    @apply bg-[#FDFBF7] dark:bg-[#030303] text-neutral-900 dark:text-white antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography - Geist/Inter with tight tracking */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-[-0.02em] font-bold;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   /* Glassmorphism */
   .glass {
-    @apply bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-neutral-200/20 dark:border-white/10;
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-neutral-200/20 dark:border-white/10;
   }
   
   .glass-hover {
@@ -47,10 +86,122 @@
 
   /* Typography */
   .text-heading {
-    @apply text-neutral-900 dark:text-white font-bold tracking-tight;
+    @apply text-neutral-900 dark:text-white font-bold tracking-[-0.02em];
   }
 
   .text-body {
     @apply text-neutral-600 dark:text-neutral-400 leading-relaxed;
   }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+
+  /* Hide scrollbar on mobile */
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+  }
+
+  @media (max-width: 768px) {
+    * {
+      scrollbar-width: none;
+    }
+  }
+
+  /* Selection Color */
+  ::selection {
+    background-color: #3b82f6;
+    color: #000;
+  }
+
+  ::-moz-selection {
+    background-color: #3b82f6;
+    color: #000;
+  }
+
+  /* Smooth Image Loading - Blur Up Effect */
+  .image-blur-up {
+    filter: grayscale(100%) blur(20px);
+    transition: filter 0.5s ease-in-out;
+  }
+
+  .image-blur-up.loaded {
+    filter: grayscale(0%) blur(0);
+  }
+
+  /* Spotlight Effect */
+  .spotlight-border {
+    position: relative;
+  }
+
+  .spotlight-border::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: radial-gradient(
+      circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(59, 130, 246, 0.4) 0%,
+      transparent 60%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .spotlight-border:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Vertical Scroll Animation for Bento Grid */
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-vertical {
+  animation: scroll-vertical 15s linear infinite;
+}
+
+.mask-gradient-vertical {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }

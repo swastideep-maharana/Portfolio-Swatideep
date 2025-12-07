@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 import { ButtonCTA } from "./ButtonCTA";
+import { ContactForm } from "./ContactForm";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconMail,
@@ -96,7 +97,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 relative overflow-hidden bg-white dark:bg-black"
+      className="py-20 md:py-28 relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-black dark:via-black dark:to-black" />
@@ -161,11 +162,25 @@ export const Contact = () => {
           </Paragraph>
         </motion.div>
 
+        {/* Contact Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl mx-auto mb-16"
+        >
+          <div className="glass rounded-2xl p-6 md:p-8 border border-white/10">
+            <ContactForm />
+          </div>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
           {socialLinks.map((link, index) => (

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { FloatingNavbar } from "@/components/FloatingNavbar";
+import { SmoothScrollWrapper } from "@/components/layout/SmoothScrollWrapper";
+import { FloatingDock } from "@/components/layout/FloatingDock";
 import { Footer } from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+import { DeepAuroraBackground } from "@/components/layout/DeepAuroraBackground";
+import { CustomCursor } from "@/components/layout/CustomCursor";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Swastideep Maharana - Portfolio",
@@ -14,6 +16,28 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
     apple: "/logo.svg",
+  },
+  openGraph: {
+    title: "Swastideep Maharana - Full Stack Developer",
+    description: "Full Stack Developer crafting elegant solutions with modern technologies",
+    url: "https://swastideep-maharana.vercel.app",
+    siteName: "Swastideep Maharana Portfolio",
+    images: [
+      {
+        url: "https://swastideep-maharana.vercel.app/og?title=Swastideep%20Maharana",
+        width: 1200,
+        height: 630,
+        alt: "Swastideep Maharana - Full Stack Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Swastideep Maharana - Full Stack Developer",
+    description: "Full Stack Developer crafting elegant solutions with modern technologies",
+    images: ["https://swastideep-maharana.vercel.app/og?title=Swastideep%20Maharana"],
   },
 };
 
@@ -25,14 +49,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${GeistSans.variable} font-sans antialiased`}
       >
         <ThemeProvider>
-          <main className="min-h-screen w-full">
-            {children}
-          </main>
-          <FloatingNavbar />
-          <Footer />
+          <DeepAuroraBackground />
+          <CustomCursor />
+          <SmoothScrollWrapper>
+            <main className="min-h-screen w-full relative z-10">
+              {children}
+            </main>
+            <FloatingDock />
+            <Footer />
+          </SmoothScrollWrapper>
+          <Toaster position="top-right" richColors />
         </ThemeProvider>
       </body>
     </html>
