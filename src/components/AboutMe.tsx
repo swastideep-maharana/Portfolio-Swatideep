@@ -58,10 +58,10 @@ export const AboutMe = () => {
             My Journey
           </h4>
           <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
-            I'm a passionate developer focused on creating intuitive, scalable digital products. My approach combines clean code architecture with pixel-perfect design.
+            {`I'm a passionate developer focused on creating intuitive, scalable digital products. My approach combines clean code architecture with pixel-perfect design.`}
           </p>
           <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            I specialize in the React ecosystem (Next.js, Tailwind) and robust backend solutions (Node.js). I'm constantly exploring new technologies to build better user experiences.
+            {`I specialize in the React ecosystem (Next.js, Tailwind) and robust backend solutions (Node.js). I'm constantly exploring new technologies to build better user experiences.`}
           </p>
         </motion.div>
 

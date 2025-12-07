@@ -15,8 +15,8 @@ export default function ProjectsPage() {
         </h1>
         <div className="h-1 w-24 bg-orange-500 rounded-full" />
         <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
-           A collection of projects where I've pushed the boundaries of design and engineering.
-           From AI-powered tools to immersive web applications.
+           {`A collection of projects where I've pushed the boundaries of design and engineering.
+           From AI-powered tools to immersive web applications.`}
         </p>
       </div>
 

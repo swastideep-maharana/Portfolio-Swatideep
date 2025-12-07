@@ -15,8 +15,8 @@ export default function AboutPage() {
         </h1>
         <div className="h-1 w-24 bg-orange-500 rounded-full" />
         <p className="mt-6 text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl leading-relaxed">
-           I'm Swastideep, a developer who loves building things for the web. 
-           Here's a glimpse into my world, my journey, and what drives me.
+           {`I'm Swastideep, a developer who loves building things for the web. 
+           Here's a glimpse into my world, my journey, and what drives me.`}
         </p>
       </div>
       
