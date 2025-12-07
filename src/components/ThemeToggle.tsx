@@ -1,12 +1,13 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { IconSun, IconMoon } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
+export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -21,72 +22,14 @@ export function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="relative w-10 h-10 rounded-lg flex items-center justify-center text-gray-900 dark:text-white transition-colors"
+      className="glass p-3 rounded-full text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors"
+      aria-label="Toggle theme"
     >
-      <motion.div
-        initial={false}
-        animate={{
-          scale: theme === "dark" ? 1 : 0,
-          opacity: theme === "dark" ? 1 : 0,
-        }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-0 rounded-lg bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-500/20 dark:from-purple-500/10 dark:via-blue-500/10 dark:to-cyan-500/10"
-      />
-      <motion.div
-        initial={false}
-        animate={{
-          scale: theme === "light" ? 1 : 0,
-          opacity: theme === "light" ? 1 : 0,
-        }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-0 rounded-lg bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-cyan-500/20"
-      />
-      <motion.div
-        initial={false}
-        animate={{
-          rotate: theme === "dark" ? 180 : 0,
-        }}
-        transition={{ duration: 0.2 }}
-        className="relative z-10"
-      >
-        {theme === "dark" ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <motion.path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <motion.path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            />
-          </svg>
-        )}
-      </motion.div>
+      {theme === "dark" ? (
+        <IconSun className="w-5 h-5" />
+      ) : (
+        <IconMoon className="w-5 h-5" />
+      )}
     </motion.button>
   );
-}
+};
