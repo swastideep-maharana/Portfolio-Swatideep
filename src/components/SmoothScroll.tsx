@@ -4,27 +4,30 @@ import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
 
-export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
+interface SmoothScrollWrapperProps {
+  children: React.ReactNode;
+}
+
+export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
   const pathname = usePathname();
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Check if mobile device
-    const isMobile = 
-      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+    // 1. Check if mobile device
+    const isMobile =
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
       window.innerWidth < 768 ||
       "ontouchstart" in window;
 
-    // Disable smooth scroll on mobile for better performance
+    // 2. Disable smooth scroll on mobile for better performance
     if (isMobile) {
       return;
     }
 
-    // Initialize Lenis with premium settings
+    // 3. Initialize Lenis (REMOVED 'smoothTouch' property)
     const lenis = new Lenis({
       lerp: 0.1, // Smooth, buttery feel - premium weight
       smoothWheel: true,
-      smoothTouch: false, // Disable on touch devices
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
@@ -36,7 +39,7 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
     lenisRef.current = lenis;
 
-    // Animation frame function
+    // 4. Animation frame function
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -44,7 +47,7 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
     requestAnimationFrame(raf);
 
-    // Handle resize - disable if becomes mobile
+    // 5. Handle resize
     const handleResize = () => {
       const isNowMobile = window.innerWidth < 768;
       if (isNowMobile && lenisRef.current) {
@@ -67,4 +70,3 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
   return <>{children}</>;
 };
-

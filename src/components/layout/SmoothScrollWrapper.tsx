@@ -14,8 +14,8 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
 
   useEffect(() => {
     // Check if mobile device
-    const isMobile = 
-      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+    const isMobile =
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
       window.innerWidth < 768 ||
       "ontouchstart" in window;
 
@@ -26,9 +26,9 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
 
     // Initialize Lenis with premium settings
     const lenis = new Lenis({
-      lerp: 0.1, // Smooth, buttery feel - premium weight
+      lerp: 0.1,
       smoothWheel: true,
-      smoothTouch: false,
+      // DELETED THE ERROR LINE HERE
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
@@ -71,4 +71,3 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
 
   return <>{children}</>;
 };
-
