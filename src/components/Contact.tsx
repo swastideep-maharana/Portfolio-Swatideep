@@ -46,10 +46,10 @@ export const Contact = () => {
         >
             <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
-                    Let's Connect
+                    Let&apos;s Connect
                 </h1>
                 <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                    I'm currently seeking new opportunities and would love to hear from you. 
+                    I&apos;m currently seeking new opportunities and would love to hear from you. 
                     Whether you have a question, a project idea, or just want to say hi, 
                     my inbox is always open.
                 </p>
