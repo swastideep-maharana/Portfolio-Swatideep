@@ -71,7 +71,7 @@ export const Footer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                    className="text-neutral-600 dark:text-neutral-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors transform hover:scale-110"
+                    className="text-neutral-600 dark:text-neutral-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
                   >
                     <Icon className="w-6 h-6" />
                   </motion.a>

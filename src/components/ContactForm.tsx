@@ -178,8 +178,6 @@ export const ContactForm = () => {
       <motion.button
         type="submit"
         disabled={isSubmitting}
-        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
         className={`
           w-full px-6 py-3 rounded-xl font-medium
           bg-neutral-900 dark:bg-white text-white dark:text-neutral-900

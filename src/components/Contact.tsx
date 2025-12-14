@@ -56,7 +56,7 @@ export const Contact = () => {
             </div>
 
             {/* Email Card */}
-            <div className="relative overflow-hidden p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900/50 backdrop-blur-xl border border-neutral-200 dark:border-white/10 shadow-xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] hover:border-orange-500/30 hover:-translate-y-1">
+            <div className="relative overflow-hidden p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900/50 backdrop-blur-xl border border-neutral-200 dark:border-white/10 shadow-xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] hover:border-orange-500/30">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
@@ -104,7 +104,7 @@ export const Contact = () => {
                             className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-400 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 shadow-sm hover:shadow-lg group/social"
                             title={social.label}
                         >
-                            <social.icon className="w-5 h-5 transition-transform group-hover/social:scale-110" />
+                            <social.icon className="w-5 h-5" />
                             <span className="font-medium">{social.label}</span>
                         </a>
                     ))}

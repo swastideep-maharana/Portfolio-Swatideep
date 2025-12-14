@@ -65,7 +65,7 @@ export const TechStack = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 relative z-10">
               {group.skills.map((skill, skillIndex) => (
                 <div key={skill.name} className="flex flex-col items-center gap-3 group/skill cursor-pointer">
-                  <div className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 shadow-sm transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:shadow-[0_0_20px_rgba(251,146,60,0.3)] group-hover/skill:border-orange-500/50 ${skill.color}`}>
+                  <div className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 shadow-sm transition-all duration-300 group-hover/skill:shadow-[0_0_20px_rgba(251,146,60,0.3)] group-hover/skill:border-orange-500/50 ${skill.color}`}>
                     <skill.icon className="w-8 h-8" stroke={1.5} />
                   </div>
                   <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white transition-colors">

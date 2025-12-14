@@ -39,7 +39,7 @@ export const ProjectCard = ({ product, index, gridClass }: ProjectCardProps) => 
           alt={product.title}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-500 hover:scale-105"
+          className="object-cover transition-transform duration-500"
         />
       </a>
 
