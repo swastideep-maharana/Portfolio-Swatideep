@@ -25,7 +25,7 @@ export const ProjectCard = ({ product, index, gridClass }: ProjectCardProps) => 
         delay: index * 0.05,
         duration: 0.4,
       }}
-      className={`group relative flex flex-col rounded-2xl bg-white dark:bg-black/20 border border-neutral-200 dark:border-white/10 overflow-hidden ${gridClass}`}
+      className={`group relative flex flex-col rounded-2xl bg-white dark:bg-neutral-900/50 backdrop-blur-xl border border-neutral-200 dark:border-white/10 overflow-hidden hover:shadow-[0_0_20px_rgba(249,115,22,0.1)] hover:border-orange-500/30 transition-all duration-300 ${gridClass}`}
     >
       {/* Image Section - Clickable */}
       <a 
@@ -80,7 +80,7 @@ export const ProjectCard = ({ product, index, gridClass }: ProjectCardProps) => 
               href={product.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:opacity-90 transition-opacity"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-sm"
             >
               <IconExternalLink className="w-4 h-4" />
               Live Demo
@@ -91,7 +91,7 @@ export const ProjectCard = ({ product, index, gridClass }: ProjectCardProps) => 
               href={product.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-black text-neutral-900 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-900/50 text-neutral-600 dark:text-neutral-300 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 shadow-sm"
               aria-label="View Source Code"
             >
               <IconBrandGithub className="w-5 h-5" />

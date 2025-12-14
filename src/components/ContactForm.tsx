@@ -181,12 +181,13 @@ export const ContactForm = () => {
         whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
         whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
         className={`
-          w-full px-6 py-3 rounded-xl font-medium text-white
-          bg-blue-500 hover:bg-blue-600
+          w-full px-6 py-3 rounded-xl font-medium
+          bg-neutral-900 dark:bg-white text-white dark:text-neutral-900
+          hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white
           disabled:opacity-50 disabled:cursor-not-allowed
-          transition-all duration-200
+          transition-all duration-300
           flex items-center justify-center gap-2
-          focus:outline-none focus:ring-2 focus:ring-blue-500/50
+          focus:outline-none focus:ring-2 focus:ring-orange-500/50
         `}
       >
         {isSubmitting ? (

@@ -7,7 +7,7 @@ import { FloatingDock } from "@/components/layout/FloatingDock";
 import { Footer } from "@/components/Footer";
 import { DeepAuroraBackground } from "@/components/layout/DeepAuroraBackground";
 import { SamuraiEmbers } from "@/components/ui/SamuraiEmbers";
-import { IntroSplash } from "@/components/ui/IntroSplash";
+
 import { Toaster } from "sonner";
 
 const outfit = Outfit({ 
@@ -59,7 +59,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${playfair.variable} font-sans antialiased`}
       >
-        <IntroSplash />
+
         
         <ThemeProvider>
           <DeepAuroraBackground />

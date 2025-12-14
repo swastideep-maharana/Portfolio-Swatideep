@@ -1,152 +1,131 @@
 "use client";
 import React, { useState } from "react";
-import { Heading } from "./Heading";
-import { Paragraph } from "./Paragraph";
-import { ButtonCTA } from "./ButtonCTA";
 import { ContactForm } from "./ContactForm";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  IconMail,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandTwitter,
+  IconMail,
   IconCopy,
   IconCheck,
 } from "@tabler/icons-react";
 
-const socialLinks = [
+const socials = [
   {
-    icon: IconMail,
-    href: "mailto:swastideep67maharana@gmail.com",
-    label: "Send me an email",
-    variant: "primary" as const,
-    copyText: "swastideep67maharana@gmail.com",
+    icon: IconBrandLinkedin,
+    href: "https://www.linkedin.com/in/swastideep-maharana-090158280/",
+    label: "LinkedIn",
   },
   {
     icon: IconBrandGithub,
     href: "https://github.com/swastideep-maharana",
-    label: "View my GitHub",
-    variant: "secondary" as const,
-    copyText: "https://github.com/swastideep-maharana",
-  },
-  {
-    icon: IconBrandLinkedin,
-    href: "https://www.linkedin.com/in/swastideep-maharana-090158280/",
-    label: "Connect on LinkedIn",
-    variant: "secondary" as const,
-    copyText: "https://www.linkedin.com/in/swastideep-maharana-090158280/",
-  },
-  {
-    icon: IconBrandTwitter,
-    href: "https://twitter.com/swastideep884",
-    label: "Follow on Twitter",
-    variant: "secondary" as const,
-    copyText: "https://twitter.com/swastideep884",
+    label: "GitHub",
   },
 ];
 
-const SocialLink = ({
-  link,
-  index,
-}: {
-  link: (typeof socialLinks)[0];
-  index: number;
-}) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(link.copyText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <motion.div
-      key={link.href}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-      className="relative group"
-    >
-      <div className="relative bg-white dark:bg-black rounded-2xl p-6 border border-neutral-200 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 group-hover:border-orange-500/30">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="relative flex items-center justify-between">
-          <ButtonCTA href={link.href} variant={link.variant} className="flex-1">
-            <link.icon className="w-5 h-5 mr-2 group-hover:text-orange-500 transition-colors" />
-            <span className="group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
-                 {link.label}
-            </span>
-          </ButtonCTA>
-          <button
-            onClick={handleCopy}
-            className="ml-2 p-2 text-gray-500 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors"
-            title="Copy to clipboard"
-          >
-            {copied ? (
-              <IconCheck className="w-5 h-5 text-green-500" />
-            ) : (
-              <IconCopy className="w-5 h-5" />
-            )}
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 export const Contact = () => {
+    const [emailCopied, setEmailCopied] = useState(false);
+    const email = "swastideep67maharana@gmail.com";
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText(email);
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+    };
+
   return (
-    <section
-      id="contact"
-      className="py-20 md:py-28 relative overflow-hidden bg-transparent"
-    >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+    <section className="relative w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        
+        {/* Left Column: Info & Connect */}
+        <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-start space-y-8"
         >
-          <Heading
-            as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white"
-          >
-            Get in Touch
-          </Heading>
-          <div className="h-1 w-20 bg-orange-500 rounded-full mx-auto mt-6 mb-6" />
-          <Paragraph className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Let&apos;s discuss your project and see how we can work together to
-            bring your ideas to life.
-          </Paragraph>
+            <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-6">
+                    Let's Connect
+                </h1>
+                <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    I'm currently seeking new opportunities and would love to hear from you. 
+                    Whether you have a question, a project idea, or just want to say hi, 
+                    my inbox is always open.
+                </p>
+            </div>
+
+            {/* Email Card */}
+            <div className="relative overflow-hidden p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900/50 backdrop-blur-xl border border-neutral-200 dark:border-white/10 shadow-xl transition-all duration-300 group hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] hover:border-orange-500/30 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6">
+                        <div className="p-3 sm:p-4 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-500 shrink-0 ring-1 ring-orange-500/20">
+                            <IconMail className="w-6 h-6 sm:w-8 sm:h-8" />
+                        </div>
+                        <div className="w-full min-w-0">
+                            <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-1">Mail me at</p>
+                            <h3 className="text-neutral-900 dark:text-white font-bold text-lg sm:text-xl md:text-2xl break-all leading-tight">
+                                {email}
+                            </h3>
+                        </div>
+                    </div>
+                    <div className="flex gap-3 mt-6">
+                        <a 
+                            href={`mailto:${email}`}
+                            className="flex-1 py-3 px-4 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-center text-sm sm:text-base hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-lg"
+                        >
+                            Send Email
+                        </a>
+                        <button
+                            onClick={handleCopyEmail}
+                            className="px-5 py-3 rounded-xl border border-neutral-200 dark:border-white/10 hover:bg-orange-500 hover:text-white hover:border-orange-500 dark:hover:bg-orange-500 dark:hover:text-white dark:hover:border-orange-500 transition-colors text-neutral-600 dark:text-neutral-300 backdrop-blur-sm"
+                            title="Copy Email"
+                        >
+                            {emailCopied ? <IconCheck className="w-5 h-5 text-white" /> : <IconCopy className="w-5 h-5" />}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Socials Row */}
+            <div>
+                <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-4">
+                    Or find me on social media
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                    {socials.map((social) => (
+                        <a
+                            key={social.label}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-3 p-4 rounded-xl bg-white dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-400 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 shadow-sm hover:shadow-lg group/social"
+                            title={social.label}
+                        >
+                            <social.icon className="w-5 h-5 transition-transform group-hover/social:scale-110" />
+                            <span className="font-medium">{social.label}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
         </motion.div>
 
-        {/* Contact Form */}
+        {/* Right Column: Form */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl mx-auto mb-16"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="glass rounded-2xl p-6 md:p-8 border border-white/10 dark:border-white/10 hover:border-orange-500/20 transition-colors duration-500">
-            <ContactForm />
-          </div>
+            <div className="bg-white dark:bg-neutral-900/30 p-6 md:p-8 rounded-3xl border border-neutral-200 dark:border-white/10 shadow-2xl">
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-6">
+                    Send a Message
+                </h3>
+                <ContactForm />
+            </div>
         </motion.div>
 
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-        >
-          {socialLinks.map((link, index) => (
-            <SocialLink key={link.href} link={link} index={index} />
-          ))}
-        </motion.div>
       </div>
     </section>
   );

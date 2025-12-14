@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IconBrandGithub, IconBrandTwitter, IconBrandLinkedin } from "@tabler/icons-react";
+import Link from "next/link";
 
 export const Footer = () => {
   const email = "swastideep67maharana@gmail.com";
@@ -36,8 +37,8 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
             className="w-full"
           >
-            <a
-              href={`mailto:${email}`}
+            <Link
+              href="/contact"
               className="block w-full group"
             >
               <h2
@@ -45,7 +46,7 @@ export const Footer = () => {
               >
                 LET&apos;S WORK TOGETHER
               </h2>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Social Links & Copyright */}

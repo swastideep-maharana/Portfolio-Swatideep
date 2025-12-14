@@ -52,9 +52,8 @@ export const TechStack = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
-            className="p-8 rounded-3xl bg-white/50 dark:bg-white/5 border border-neutral-200 dark:border-white/10 backdrop-blur-sm relative overflow-hidden group"
+            className="p-8 rounded-3xl bg-white dark:bg-neutral-900/50 border border-neutral-200 dark:border-white/10 backdrop-blur-xl relative overflow-hidden group hover:border-orange-500/30 transition-colors duration-500"
           >
-             {/* Neon Glow on Card Hover */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent blur-xl" />
                 <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
@@ -66,7 +65,7 @@ export const TechStack = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 relative z-10">
               {group.skills.map((skill, skillIndex) => (
                 <div key={skill.name} className="flex flex-col items-center gap-3 group/skill cursor-pointer">
-                  <div className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 shadow-sm transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:bg-neutral-50 dark:group-hover/skill:bg-white/10 group-hover/skill:border-orange-500/30 group-hover/skill:shadow-[0_0_15px_rgba(251,146,60,0.2)] ${skill.color}`}>
+                  <div className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 shadow-sm transition-all duration-300 group-hover/skill:scale-110 group-hover/skill:shadow-[0_0_20px_rgba(251,146,60,0.3)] group-hover/skill:border-orange-500/50 ${skill.color}`}>
                     <skill.icon className="w-8 h-8" stroke={1.5} />
                   </div>
                   <span className="text-sm font-medium text-neutral-600 dark:text-neutral-400 group-hover/skill:text-neutral-900 dark:group-hover/skill:text-white transition-colors">

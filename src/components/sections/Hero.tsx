@@ -2,6 +2,7 @@
 
 import { CodeTerminal } from "../ui/CodeTerminal";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 
 import { SamuraiEmbers } from "../ui/SamuraiEmbers";
@@ -85,15 +86,30 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex items-center gap-4"
+                className="flex flex-wrap items-center gap-4 justify-center xl:justify-start"
             >
                 <a
-                href="#projects"
-                className="px-8 py-4 rounded-full bg-orange-500 text-white font-medium hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
+                  href="/Swastideep_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-lg"
                 >
-                View Work
+                  Resume
                 </a>
-                <div className="flex gap-4">
+                <a
+                  href="#projects"
+                  className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
+                >
+                  Projects
+                </a>
+                <Link
+                  href="/contact"
+                  className="px-8 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300"
+                >
+                  Contact
+                </Link>
+                
+                <div className="flex gap-3 pl-2 border-l border-neutral-200 dark:border-neutral-800">
                     <SocialLink href="https://github.com/swastideep-maharana" icon={<IconBrandGithub className="w-5 h-5"/>} />
                     <SocialLink href="https://www.linkedin.com/in/swastideep-maharana-090158280/" icon={<IconBrandLinkedin className="w-5 h-5"/>} />
                 </div>
@@ -139,7 +155,7 @@ const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-600 dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+      className="p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-600 dark:text-white hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 shadow-sm hover:shadow-lg"
     >
       {icon}
     </a>
