@@ -150,7 +150,7 @@ export const About = () => {
                   }}
                 >
                   <Image
-                    src="/SwastideepProfile.png"
+                    src="/swastideep protfolio.jpg"
                     alt="Swastideep Maharana"
                     width={256}
                     height={256}

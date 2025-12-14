@@ -21,7 +21,7 @@ const SidebarHeader = () => {
       <Link href="/" className="flex items-center space-x-4 group">
         <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden ring-2 ring-indigo-100 dark:ring-indigo-900/30 group-hover:ring-indigo-200 dark:group-hover:ring-indigo-800/30 transition-all duration-300">
           <Image
-            src="/SwastideepProfile.png"
+            src="/swastideep protfolio.jpg"
             alt="Swastideep Maharana"
             fill
             sizes="(max-width: 640px) 40px, 48px"

@@ -24,7 +24,7 @@ export const AboutMe = () => {
         <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 rounded-full p-2 border-2 border-dashed border-orange-500/30">
           <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
             <Image
-              src="/SwastideepProfile.png"
+              src="/swastideep protfolio.jpg"
               alt="Swastideep Maharana"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"

@@ -2,6 +2,18 @@ import { Product } from "@/types/products";
 
 export const products: Product[] = [
   {
+    title: "UrbanTwin - Intelligent Urban Visualization",
+    description:
+      "An intelligent, living visualization of urban data. UrbanTwin transforms static maps into a volumetric 3D digital twin with realistic terrain, atmospheric effects, and AI-powered insights.",
+    thumbnail: "/urban twin.png",
+    images: ["/urban twin.png"],
+    href: "https://urban-twin.vercel.app/",
+    github: "https://github.com/swastideep-maharana/UrbanTwin",
+    stack: ["Next.js", "TypeScript", "Mapbox GL JS", "Gemini API", "Tailwind CSS"],
+    slug: "urban-twin",
+    content: `UrbanTwin is not just a map; it’s an intelligent, living visualization of urban data. Built with Next.js 15 and Mapbox GL JS, it features a volumetric 3D digital twin with realistic terrain and atmospheric sky layers. Powered by the Google Gemini API, it provides intelligent insights into urban environments. [Live](https://urban-twin.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/UrbanTwin)`,
+  },
+  {
     title: "Pixxel-ai - AI Image Editor",
     description:
       " Pixxel-ai is a cutting-edge AI image editor that allows users to enhance and transform their images with ease. Features include AI-powered image enhancement, background removal, and a user-friendly interface built with Tailwind CSS.",

@@ -4,9 +4,12 @@ import { CodeTerminal } from "../ui/CodeTerminal";
 import { motion } from "framer-motion";
 import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 
+import { SamuraiEmbers } from "../ui/SamuraiEmbers";
+
 export const Hero = () => {
   return (
     <section className="relative w-full min-h-[85vh] flex items-center justify-center px-6 sm:px-12 md:px-16 lg:px-12 xl:px-32">
+      <SamuraiEmbers />
       
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
         
