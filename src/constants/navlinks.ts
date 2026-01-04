@@ -3,7 +3,9 @@ import {
   IconBriefcase,
   IconUser,
   IconMail,
+  IconRocket
 } from "@tabler/icons-react";
+
 import { Navlink } from "@/types/navlink";
 
 export const navlinks: Navlink[] = [
@@ -21,6 +23,11 @@ export const navlinks: Navlink[] = [
     label: "About",
     href: "/about",
     icon: IconUser,
+  },
+  {
+    label: "Freelance",
+    href: "/#freelance",
+    icon: IconRocket,
   },
   {
     label: "Contact",

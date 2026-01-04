@@ -10,4 +10,5 @@ export type Product = {
   stack?: string[];
   content?: React.ReactNode | string;
   github?: string;
+  color?: string;
 };

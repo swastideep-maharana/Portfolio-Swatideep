@@ -11,6 +11,7 @@ export const products: Product[] = [
     github: "https://github.com/swastideep-maharana/UrbanTwin",
     stack: ["Next.js", "TypeScript", "Mapbox GL JS", "Gemini API", "Tailwind CSS"],
     slug: "urban-twin",
+    color: "from-blue-500 to-cyan-500",
     content: `UrbanTwin is not just a map; it’s an intelligent, living visualization of urban data. Built with Next.js 15 and Mapbox GL JS, it features a volumetric 3D digital twin with realistic terrain and atmospheric sky layers. Powered by the Google Gemini API, it provides intelligent insights into urban environments. [Live](https://urban-twin.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/UrbanTwin)`,
   },
   {
@@ -23,6 +24,7 @@ export const products: Product[] = [
     github: "https://github.com/swastideep-maharana/Pixxel-ai",
     stack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
     slug: "tomato",
+    color: "from-purple-500 to-pink-500",
     content: `Pixxel-ai is an advanced AI image editor that simplifies the process of enhancing and transforming images. With features like AI-powered enhancement, background removal, and a sleek user interface, Pixxel-ai makes image editing accessible to everyone.  `,
   },
   {
@@ -35,6 +37,7 @@ export const products: Product[] = [
     github: "https://github.com/swastideep-maharana/Storelt-Drive",
     stack: ["Next.js", "TypeScript", "Appwrite", "Tailwind CSS", "Vercel"],
     slug: "storelt",
+    color: "from-indigo-500 to-blue-600",
     content: `Storelt is your personal document manager, offering seamless upload, sharing, and management of files. With secure OTP authentication, real-time search, and a clean UI, Storelt is the only store you need—just like Google Drive. [Live](https://storelt-drive.vercel.app/sign-in) | [GitHub](https://github.com/swastideep-maharana/Storelt-Drive)`,
   },
   {
@@ -107,5 +110,27 @@ export const products: Product[] = [
     stack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
     slug: "respawingalaxy",
     content: `RespawinGalaxy is an immersive gaming platform that brings together gaming enthusiasts from around the world. The website features an extensive collection of games, user profiles, community features, and an engaging user interface. Players can discover new games, connect with other gamers, and share their gaming experiences.`,
+  },
+  {
+    title: "NovaShield - SaaS Landing Page",
+    description: "NovaShield is a high-conversion SaaS landing page built with React, Tailwind CSS, and Framer Motion. Designed for AI, Web3, and SaaS startups, it focuses on clarity, trust, and conversion.",
+    thumbnail: "/Novashield.png",
+    images: ["/Novashield.png"],
+    href: "https://nova-shield-eosin.vercel.app/",
+    github: "https://github.com/swastideep-maharana/NovaShield",
+    stack: ["React", "Tailwind CSS", "Framer Motion", "SaaS"],
+    slug: "novashield",
+    content: `NovaShield is a high-conversion SaaS landing page built with React, Tailwind CSS, and Framer Motion. Designed for AI, Web3, and SaaS startups, it focuses on clarity, trust, and conversion using modern UI patterns, smooth animations, and scalable components. [Live](https://nova-shield-eosin.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/NovaShield)`,
+  },
+  {
+    title: "Swirlzy - D2C Bakery Landing Page",
+    description: "Swirlzy is a modern D2C landing page for food and bakery brands, built using React and Tailwind CSS. It focuses on visual storytelling and product discovery.",
+    thumbnail: "/Swirlzy.png",
+    images: ["/Swirlzy.png"],
+    href: "https://swirlzy-jade.vercel.app/",
+    github: "https://github.com/swastideep-maharana/Swirlzy",
+    stack: ["React", "Tailwind CSS", "D2C", "Bakery"],
+    slug: "swirlzy",
+    content: `Swirlzy is a modern D2C landing page for food and bakery brands, built using React and Tailwind CSS. It focuses on visual storytelling, product discovery, and conversion-driven design with smooth interactions. [Live](https://swirlzy-jade.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/Swirlzy)`,
   },
 ];

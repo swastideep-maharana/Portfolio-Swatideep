@@ -9,7 +9,7 @@ import { SamuraiEmbers } from "../ui/SamuraiEmbers";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center px-6 sm:px-12 md:px-16 lg:px-12 xl:px-32">
+    <section className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden">
       <SamuraiEmbers />
       
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
@@ -102,6 +102,13 @@ export const Hero = () => {
                 >
                   Projects
                 </a>
+                <a
+                  href="#freelance"
+                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-lg"
+                >
+                  Freelance
+                </a>
+
                 <Link
                   href="/contact"
                   className="px-8 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300"

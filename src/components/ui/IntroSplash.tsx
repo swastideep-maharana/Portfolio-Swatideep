@@ -52,7 +52,7 @@ export const IntroSplash = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
                         className="text-lg md:text-xl font-medium text-neutral-400 tracking-widest uppercase"
                     >
-                        Portfolio &copy; 2025
+                        Portfolio &copy; 2026
                     </motion.p>
                 </div>
             </div>
