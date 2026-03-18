@@ -2,6 +2,18 @@ import { Product } from "@/types/products";
 
 export const products: Product[] = [
   {
+    title: "Resonance - AI Voice Cloning & TTS Platform",
+    description: "A premium, high-performance platform for AI-powered Text-to-Speech (TTS) and Voice Cloning. Built with Next.js 16, React 19, and Tailwind CSS 4, it offers a sleek, professional experience for creating and managing lifelike AI voices.",
+    thumbnail: "/resonance.png",
+    images: ["/resonance.png"],
+    href: "https://resonance-ai-voice-cloning.vercel.app/",
+    github: "https://github.com/swastideep-maharana/Resonance",
+    stack: ["Next.js 16", "React 19", "Tailwind CSS 4", "Clerk", "tRPC", "PostgreSQL", "Prisma"],
+    slug: "resonance",
+    color: "from-purple-600 to-indigo-600",
+    content: "Resonance is a premium, high-performance platform for AI-powered Text-to-Speech (TTS) and Voice Cloning. Built with the latest bleeding-edge technologies, it offers a sleek, professional experience for creating and managing lifelike AI voices. Key features include Professional TTS, Instant Voice Cloning, and a Voice Explorer with a premium glassmorphism aesthetic. [Live](https://resonance-ai-voice-cloning.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/Resonance)",
+  },
+  {
     title: "UrbanTwin - Intelligent Urban Visualization",
     description:
       "An intelligent, living visualization of urban data. UrbanTwin transforms static maps into a volumetric 3D digital twin with realistic terrain, atmospheric effects, and AI-powered insights.",

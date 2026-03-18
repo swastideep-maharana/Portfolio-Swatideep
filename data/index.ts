@@ -133,6 +133,14 @@ export const projects = [
     iconLists: ["/re.svg", "/tail.svg", "/js.png", "/html.png", "/css.png"],
     link: "https://respawingalaxy.netlify.app",
   },
+  {
+    id: 7,
+    title: "Resonance - AI Voice Cloning & TTS Platform",
+    des: "A premium, high-performance platform for AI-powered Text-to-Speech (TTS) and Voice Cloning. Built with Next.js 16, React 19, and Tailwind CSS 4, it offers a sleek, professional experience for creating and managing lifelike AI voices.",
+    img: "/resonance.png",
+    iconLists: ["/next.svg", "/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://resonance-ai-voice-cloning.vercel.app/",
+  },
 ];
 
 export const testimonials = [
