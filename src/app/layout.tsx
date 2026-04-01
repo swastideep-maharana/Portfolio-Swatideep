@@ -9,6 +9,7 @@ import { DeepAuroraBackground } from "@/components/layout/DeepAuroraBackground";
 import { SamuraiEmbers } from "@/components/ui/SamuraiEmbers";
 
 import { Toaster } from "sonner";
+import { AiAssistant } from "@/components/AiAssistant";
 
 const outfit = Outfit({ 
   subsets: ["latin"],
@@ -76,6 +77,7 @@ export default function RootLayout({
             </div>
           </SmoothScrollWrapper>
           <Toaster position="top-right" richColors />
+          <AiAssistant />
         </ThemeProvider>
       </body>
     </html>

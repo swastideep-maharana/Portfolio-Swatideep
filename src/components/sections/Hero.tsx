@@ -85,14 +85,14 @@ export const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="flex flex-wrap items-center gap-4 justify-center xl:justify-start"
             >
-                <a
+{/* <a
                   href="/Swastideep_fullstack%20(2).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg"
                 >
                   Resume
-                </a>
+                </a> */}
                 <a
                   href="#projects"
                   className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
