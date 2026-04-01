@@ -75,10 +75,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    scroll-behavior: smooth;
   }
   html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   section {
     scroll-margin-top: 80px;

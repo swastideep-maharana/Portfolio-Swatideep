@@ -24,7 +24,7 @@ export const DeepAuroraBackground = () => {
 
       {/* 2. Intense Core (Amber/Gold) - Refined Blur for Performance */}
       <motion.div
-        className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] opacity-40 dark:opacity-30 blur-3xl"
+        className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] opacity-40 dark:opacity-30 blur-2xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ duration: 2 }}
@@ -38,7 +38,7 @@ export const DeepAuroraBackground = () => {
           `,
           borderRadius: "100% 100% 0 0",
           transform: 'translateZ(0)',
-          willChange: 'opacity',
+          willChange: 'opacity, transform',
         }}
       />
 

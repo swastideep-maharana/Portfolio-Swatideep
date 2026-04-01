@@ -26,16 +26,15 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
       return;
     }
 
-    // Initialize Lenis with optimized settings
     const lenis = new Lenis({
-      lerp: 0.12, // Increased from 0.1 for snappier response
+      lerp: 0.1, // Smoother, more balanced scroll
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
 
     lenisRef.current = lenis;

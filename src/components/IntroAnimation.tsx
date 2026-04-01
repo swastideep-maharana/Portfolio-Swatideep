@@ -36,6 +36,7 @@ const Star = ({
       width: size,
       height: size,
       filter: "blur(0.5px)",
+      willChange: "transform, opacity",
     }}
   />
 );
@@ -72,6 +73,7 @@ const Particle = ({
       width: size,
       height: size,
       filter: "blur(1px)",
+      willChange: "transform, opacity",
     }}
   />
 );
@@ -143,7 +145,7 @@ export const IntroAnimation = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 4000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -159,7 +161,7 @@ export const IntroAnimation = () => {
         >
           {/* Stars */}
           <div className="absolute inset-0">
-            {Array.from({ length: 50 }).map((_, i) => (
+            {Array.from({ length: 15 }).map((_, i) => (
               <Star
                 key={`star-${i}`}
                 delay={i * 0.1}
@@ -173,7 +175,7 @@ export const IntroAnimation = () => {
 
           {/* Particles */}
           <div className="absolute inset-0">
-            {Array.from({ length: 25 }).map((_, i) => (
+            {Array.from({ length: 8 }).map((_, i) => (
               <Particle
                 key={`particle-${i}`}
                 delay={i * 0.2}

@@ -35,7 +35,7 @@ export const products: Product[] = [
     href: "https://pixxel-ai-image-editor.vercel.app/",
     github: "https://github.com/swastideep-maharana/Pixxel-ai",
     stack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-    slug: "tomato",
+    slug: "pixxel-ai",
     color: "from-purple-500 to-pink-500",
     content: `Pixxel-ai is an advanced AI image editor that simplifies the process of enhancing and transforming images. With features like AI-powered enhancement, background removal, and a sleek user interface, Pixxel-ai makes image editing accessible to everyone.  `,
   },

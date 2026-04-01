@@ -5,12 +5,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 
-import { SamuraiEmbers } from "../ui/SamuraiEmbers";
-
 export const Hero = () => {
   return (
     <section className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden">
-      <SamuraiEmbers />
       
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
         
@@ -89,10 +86,10 @@ export const Hero = () => {
                 className="flex flex-wrap items-center gap-4 justify-center xl:justify-start"
             >
                 <a
-                  href="/Swastideep_resume.pdf"
+                  href="/Swastideep_fullstack%20(2).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-lg"
+                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg"
                 >
                   Resume
                 </a>
@@ -104,14 +101,14 @@ export const Hero = () => {
                 </a>
                 <a
                   href="#freelance"
-                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-lg"
+                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg"
                 >
                   Freelance
                 </a>
 
                 <Link
                   href="/contact"
-                  className="px-8 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300"
+                  className="px-8 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300"
                 >
                   Contact
                 </Link>
@@ -162,7 +159,7 @@ const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
       href={href} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-600 dark:text-white hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white hover:border-orange-500 dark:hover:border-orange-500 transition-all duration-300 shadow-sm hover:shadow-lg"
+      className="p-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-neutral-600 dark:text-white hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-sm"
     >
       {icon}
     </a>

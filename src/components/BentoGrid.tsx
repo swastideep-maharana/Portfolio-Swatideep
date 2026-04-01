@@ -83,8 +83,7 @@ export const BentoGrid = () => {
             href="https://github.com/swastideep-maharana"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-3 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:bg-white dark:hover:bg-neutral-700 hover:border-orange-500/50 transition-all duration-300"
+            className="flex items-center gap-3 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:bg-white dark:hover:bg-neutral-700 transition-all duration-300"
           >
             <IconBrandGithub className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
             <span className="font-medium text-neutral-900 dark:text-white text-sm">GitHub</span>
@@ -93,8 +92,7 @@ export const BentoGrid = () => {
             href="https://www.linkedin.com/in/swastideep-maharana-090158280/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            className="flex items-center gap-3 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:bg-white dark:hover:bg-neutral-700 hover:border-orange-500/50 transition-all duration-300"
+            className="flex items-center gap-3 p-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 hover:bg-white dark:hover:bg-neutral-700 transition-all duration-300"
           >
             <IconBrandLinkedin className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
             <span className="font-medium text-neutral-900 dark:text-white text-sm">LinkedIn</span>

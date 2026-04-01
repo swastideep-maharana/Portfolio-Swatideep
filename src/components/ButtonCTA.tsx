@@ -18,8 +18,6 @@ export const ButtonCTA = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
       className={twMerge(
         "inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-medium rounded-md transition-colors",
         variant === "primary"

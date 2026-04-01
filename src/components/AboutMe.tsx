@@ -16,19 +16,19 @@ export const AboutMe = () => {
         transition={{ duration: 0.5 }}
         className="lg:col-span-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-neutral-100 dark:bg-white/5 border border-white/20 hover:border-orange-500/30 transition-all duration-300 relative overflow-hidden group h-full"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         {/* Glow Effect */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/20 rounded-full blur-[80px]" />
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none" />
         
         <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 rounded-full p-2 border-2 border-dashed border-orange-500/30">
           <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
-            <Image
-              src="/swastideep protfolio.jpg"
-              alt="Swastideep Maharana"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-500"
-            />
+              <Image
+                src="/swastideep protfolio.jpg"
+                alt="Swastideep Maharana"
+                fill
+                className="object-cover"
+              />
           </div>
         </div>
 
@@ -118,7 +118,7 @@ const SocialButton = ({ href, icon }: { href: string; icon: React.ReactNode }) =
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-3 rounded-full bg-white dark:bg-white/10 text-neutral-900 dark:text-white shadow-sm hover:bg-orange-500 hover:text-white transition-all duration-300 border border-neutral-200 dark:border-white/10"
+    className="p-3 rounded-full bg-white dark:bg-white/10 text-neutral-900 dark:text-white shadow-sm hover:bg-orange-500 hover:text-white transition-colors border border-neutral-200 dark:border-white/10"
   >
     {icon}
   </a>

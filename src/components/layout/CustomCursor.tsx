@@ -21,29 +21,25 @@ export const CustomCursor = () => {
       setIsVisible(true);
     };
 
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
-
     // Check if device has a cursor (not touch device)
     if (window.matchMedia("(pointer: fine)").matches) {
       window.addEventListener("mousemove", moveCursor);
       
-      // Add hover detection for interactive elements
-      const interactiveElements = document.querySelectorAll(
-        "a, button, input, textarea, select, [role='button'], [tabindex]"
-      );
-      
-      interactiveElements.forEach((el) => {
-        el.addEventListener("mouseenter", handleMouseEnter);
-        el.addEventListener("mouseleave", handleMouseLeave);
-      });
+      const handleMouseOver = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (!target) return;
+        
+        const isInteractive = target.closest(
+          "a, button, input, textarea, select, [role='button'], [tabindex]"
+        );
+        setIsHovering(!!isInteractive);
+      };
+
+      window.addEventListener("mouseover", handleMouseOver);
 
       return () => {
         window.removeEventListener("mousemove", moveCursor);
-        interactiveElements.forEach((el) => {
-          el.removeEventListener("mouseenter", handleMouseEnter);
-          el.removeEventListener("mouseleave", handleMouseLeave);
-        });
+        window.removeEventListener("mouseover", handleMouseOver);
       };
     }
   }, [cursorX, cursorY]);

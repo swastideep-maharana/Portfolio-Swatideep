@@ -14,9 +14,6 @@ export const FloatingDock = () => {
   const isActive = (href: string) => pathname === href;
 
   const getScale = (index: number) => {
-    if (hoveredIndex === null) return 1;
-    if (hoveredIndex === index) return 1.2;
-    if (Math.abs(hoveredIndex - index) === 1) return 1.1;
     return 1;
   };
 

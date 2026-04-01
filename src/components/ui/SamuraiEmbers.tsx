@@ -94,10 +94,6 @@ export const SamuraiEmbers = () => {
         ctx.bezierCurveTo(-p.size / 2, p.size / 2, -p.size / 2, -p.size / 2, 0, -p.size);
         ctx.fill();
 
-        // Optional: Add a subtle glow
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "rgba(249, 115, 22, 0.5)";
-        
         ctx.restore();
       });
 

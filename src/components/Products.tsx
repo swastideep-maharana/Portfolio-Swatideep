@@ -15,26 +15,29 @@ export const Products = () => {
       {featuredWork.map((project, index) => (
         <motion.div
           key={project.title}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className={`flex flex-col ${
             index % 2 !== 0 ? "lg:flex-row" : "lg:flex-row-reverse"
           } gap-12 items-center`}
         >
           {/* Image Container */}
           <div className="w-full lg:w-1/2 group relative">
-            <div className={`absolute -inset-4 bg-gradient-to-r ${project.color || "from-orange-500 to-amber-500"} opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500 rounded-[2.5rem]`} />
+            <div 
+              className={`absolute -inset-4 bg-gradient-to-r ${project.color || "from-orange-500 to-amber-500"} opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500 rounded-[2.5rem]`} 
+              style={{ transform: "translateZ(0)" }}
+            />
             <div className="relative rounded-3xl overflow-hidden border border-neutral-200 dark:border-white/10 shadow-2xl">
               <Image
                 src={typeof project.thumbnail === 'string' ? project.thumbnail : project.thumbnail.src}
                 alt={project.title}
                 width={1200}
                 height={675}
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+              <div className="absolute inset-0 bg-black/40 opacity-0 flex items-center justify-center gap-4">
                 <a
                   href={project.href}
                   target="_blank"
