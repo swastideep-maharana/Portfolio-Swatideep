@@ -7,7 +7,7 @@ import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconBrandX } from "
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden">
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden py-20 md:py-0">
       
       <div className="relative z-10 w-full max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
         
@@ -31,7 +31,7 @@ export const Hero = () => {
 
             {/* Main Heading - Staggered Character Animation */}
             {/* Optimization: Restored larger sizes for LG since Terminal is now hidden on LG. */}
-            <div className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-8xl 2xl:text-9xl font-sans font-bold tracking-tight text-neutral-900 dark:text-white mb-6 leading-[0.9] overflow-hidden pr-4 xl:pr-0">
+            <div className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-8xl 2xl:text-9xl font-sans font-bold tracking-tight text-neutral-900 dark:text-white mb-6 leading-[0.9] overflow-hidden pr-4 xl:pr-0">
             <motion.div
                 initial="hidden"
                 animate="visible"
@@ -70,10 +70,10 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="mb-8 flex flex-col items-center xl:items-start"
+                className="mb-8 flex flex-col items-center xl:items-start px-4 xl:px-0"
             >
-                <h2 className="text-xl font-medium text-orange-500 dark:text-orange-400 mb-2">Full Stack Developer</h2>
-                <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed text-center xl:text-left">
+                <h2 className="text-lg md:text-xl font-medium text-orange-500 dark:text-orange-400 mb-2">Full Stack Developer</h2>
+                <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed text-center xl:text-left">
                 Crafting pixel-perfect, scalable digital experiences with a focus on motion and interaction.
                 </p>
             </motion.div>
@@ -95,25 +95,25 @@ export const Hero = () => {
                 </a> */}
                 <a
                   href="#projects"
-                  className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
+                  className="px-6 py-3 md:px-8 md:py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20 text-sm md:text-base"
                 >
                   Projects
                 </a>
                 <a
                   href="#freelance"
-                  className="px-8 py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg"
+                  className="px-6 py-3 md:px-8 md:py-3 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-lg text-sm md:text-base"
                 >
                   Freelance
                 </a>
 
                 <Link
                   href="/contact"
-                  className="px-8 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300"
+                  className="px-6 py-3 md:px-8 md:py-3 rounded-full border border-neutral-200 dark:border-neutral-800 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-300 text-sm md:text-base"
                 >
                   Contact
                 </Link>
                 
-                <div className="flex gap-3 pl-2 border-l border-neutral-200 dark:border-neutral-800">
+                <div className="flex gap-3 pl-2 border-l border-neutral-200 dark:border-neutral-800 scale-90 md:scale-100">
                     <SocialLink href="https://github.com/swastideep-maharana" icon={<IconBrandGithub className="w-5 h-5"/>} />
                     <SocialLink href="https://www.linkedin.com/in/swastideep-maharana-090158280/" icon={<IconBrandLinkedin className="w-5 h-5"/>} />
                 </div>

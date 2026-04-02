@@ -11,7 +11,7 @@ export const Products = () => {
   const featuredWork = products.slice(0, 3);
 
   return (
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col gap-16 md:gap-32">
       {featuredWork.map((project, index) => (
         <motion.div
           key={project.title}
@@ -69,11 +69,11 @@ export const Products = () => {
               </div>
             </div>
             
-            <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white leading-tight tracking-tighter">
+            <h3 className="text-2xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white leading-tight tracking-tighter">
               {project.title.split(' - ')[0]}
             </h3>
             
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               {project.description}
             </p>
 
@@ -114,16 +114,16 @@ export const Products = () => {
         </motion.div>
       ))}
       
-      <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-8 md:mt-12">
         <a 
           href="/projects" 
-          className="px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-2xl font-bold hover:scale-105 transition-transform shadow-xl"
+          className="px-6 py-3 md:px-8 md:py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-2xl font-bold hover:scale-105 transition-transform shadow-xl text-sm md:text-base"
         >
           View All Projects
         </a>
         <a 
           href="#freelance" 
-          className="px-8 py-4 border border-neutral-200 dark:border-white/10 rounded-2xl font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-xl"
+          className="px-6 py-3 md:px-8 md:py-4 border border-neutral-200 dark:border-white/10 rounded-2xl font-bold hover:bg-orange-500 hover:text-white dark:hover:bg-orange-500 dark:hover:text-white transition-all duration-300 shadow-xl text-sm md:text-base"
         >
           Freelance Work
         </a>

@@ -77,7 +77,7 @@ export default function RootLayout({
             </div>
           </SmoothScrollWrapper>
           <Toaster position="top-right" richColors />
-          <AiAssistant />
+          <AiAssistant hideBubble={true} />
         </ThemeProvider>
       </body>
     </html>

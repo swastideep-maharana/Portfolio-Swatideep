@@ -40,7 +40,11 @@ const FormattedText = ({ text }: { text: string }) => {
   );
 };
 
-export const AiAssistant = () => {
+interface AiAssistantProps {
+  hideBubble?: boolean;
+}
+
+export const AiAssistant = ({ hideBubble }: AiAssistantProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -53,7 +57,7 @@ export const AiAssistant = () => {
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Magnetic Bubble Logic
+  // Magnetic Bubble Logic (Only used when bubble is NOT hidden)
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springConfig = { damping: 15, stiffness: 150 };
@@ -61,7 +65,7 @@ export const AiAssistant = () => {
   const translateY = useSpring(mouseY, springConfig);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isOpen) return;
+    if (isOpen || hideBubble) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -84,18 +88,30 @@ export const AiAssistant = () => {
   };
 
   useEffect(() => {
+    const handleToggle = () => setIsOpen((prev) => !prev);
+    window.addEventListener('toggle-ai', handleToggle);
+    
+    if (hideBubble) return () => {
+        window.removeEventListener('toggle-ai', handleToggle);
+    };
+    
     // Show tooltip after 5 seconds on first load
     const timer = setTimeout(() => setShowTooltip(true), 5000);
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+        window.removeEventListener('toggle-ai', handleToggle);
+        clearTimeout(timer);
+    };
+  }, [hideBubble]);
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, isLoading, displayedText, scrollToBottom]);
+    if (isOpen) {
+        scrollToBottom();
+    }
+  }, [messages, isLoading, displayedText, scrollToBottom, isOpen]);
 
   // Typing Simulation Effect
   const simulateTyping = (text: string) => {
@@ -151,14 +167,22 @@ export const AiAssistant = () => {
   );
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60]">
+    <div className={twMerge(
+        "fixed z-[60]",
+        hideBubble 
+            ? "bottom-24 right-4 w-[calc(100vw-2rem)] max-w-[450px]" 
+            : "bottom-6 left-6 md:left-auto md:right-6"
+    )}>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.9, transformOrigin: "bottom right" }}
+            <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9, transformOrigin: hideBubble ? "bottom right" : "bottom left" }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.9 }}
-            className="absolute bottom-20 right-0 w-[calc(100vw-3rem)] sm:w-[400px] max-w-[400px] h-[550px] rounded-3xl backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col overflow-hidden bg-neutral-950/80"
+            className={twMerge(
+                "relative h-[550px] sm:h-[600px] rounded-[32px] backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col overflow-hidden bg-neutral-950/80",
+                hideBubble ? "w-full" : "w-[calc(100vw-3rem)] sm:w-[400px] max-w-[400px]"
+            )}
           >
             {/* 2026 Mesh Gradient Polish */}
             <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -167,11 +191,11 @@ export const AiAssistant = () => {
             </div>
 
             {/* Header */}
-            <div className="p-4 border-b border-white/10 bg-white/5 flex items-center justify-between relative z-10">
+            <div className="p-5 border-b border-white/10 bg-white/5 flex items-center justify-between relative z-10">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
-                        <IconSparkles size={20} className="text-white" />
+                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center shadow-lg shadow-orange-500/20 text-white">
+                        <IconSparkles size={20} />
                     </div>
                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-neutral-950 rounded-full" />
                 </div>
@@ -245,7 +269,7 @@ export const AiAssistant = () => {
             </div>
 
             {/* Footer / Input */}
-            <div className="p-4 space-y-4 bg-white/5 border-t border-white/10 relative z-10">
+            <div className="p-5 space-y-4 bg-white/5 border-t border-white/10 relative z-10">
               {!isTyping && !isLoading && (
                 <div className="flex flex-wrap gap-2">
                   <QuickReply text="Key Experience?" />
@@ -274,63 +298,66 @@ export const AiAssistant = () => {
         )}
       </AnimatePresence>
 
-      {/* Toggle Button & Tooltip */}
-      <div className="relative group">
-        <AnimatePresence>
-            {showTooltip && !isOpen && (
-                <motion.div
-                    initial={{ opacity: 0, x: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    exit={{ opacity: 0, x: 20, scale: 0.8 }}
-                    className="absolute bottom-2 right-[70px] whitespace-nowrap px-4 py-2 bg-orange-500 text-white text-xs font-bold rounded-2xl shadow-xl flex items-center gap-2 pointer-events-none"
-                >
-                    Hey! 👋 Ask me anything!
-                    <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[6px] border-l-orange-500" />
-                </motion.div>
-            )}
-        </AnimatePresence>
-
-        <motion.button
-            onClick={() => {
-                setIsOpen(!isOpen);
-                setShowTooltip(false);
-            }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ x: translateX, y: translateY }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-orange-500/50 transition-shadow duration-300 relative overflow-hidden"
-        >
-            <AnimatePresence mode="wait">
-            {isOpen ? (
-                <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                >
-                <IconX size={30} />
-                </motion.div>
-            ) : (
-                <motion.div
-                    key="open"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    className="relative flex items-center justify-center"
-                >
-                    <IconMessageDots size={30} />
-                </motion.div>
-            )}
+      {/* Standalone Bubble (Only if NOT controlled) */}
+      {!hideBubble && (
+        <div className="relative group">
+            <AnimatePresence>
+                {showTooltip && !isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: 20, scale: 0.8 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x: 20, scale: 0.8 }}
+                        className="absolute bottom-2 left-[70px] md:left-auto md:right-[70px] whitespace-nowrap px-4 py-2 bg-orange-500 text-white text-xs font-bold rounded-2xl shadow-xl flex items-center gap-2 pointer-events-none"
+                    >
+                        Hey! 👋 Ask me anything!
+                        <div className="absolute left-[-4px] top-1/2 -translate-y-1/2 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-r-[6px] border-r-orange-500 md:left-auto md:right-[-4px] md:border-r-0 md:border-l-[6px] md:border-l-orange-500" />
+                    </motion.div>
+                )}
             </AnimatePresence>
-            
-            {/* Glowing Ring */}
-            {!isOpen && (
-                <div className="absolute inset-0 border-2 border-white/20 rounded-full animate-ping opacity-20" />
-            )}
-        </motion.button>
-      </div>
+
+            <motion.button
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                    setShowTooltip(false);
+                }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{ x: translateX, y: translateY }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center text-white shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-orange-500/50 transition-shadow duration-300 relative overflow-hidden"
+            >
+                <AnimatePresence mode="wait">
+                {isOpen ? (
+                    <motion.div
+                        key="close"
+                        initial={{ rotate: -90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 90, opacity: 0 }}
+                    >
+                    <IconX size={30} />
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        key="open"
+                        initial={{ rotate: 90, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: -90, opacity: 0 }}
+                        className="relative flex items-center justify-center"
+                    >
+                        <IconMessageDots size={30} />
+                    </motion.div>
+                )}
+                </AnimatePresence>
+                
+                {/* Glowing Ring */}
+                {!isOpen && (
+                    <div className="absolute inset-0 border-2 border-white/20 rounded-full animate-ping opacity-20" />
+                )}
+            </motion.button>
+        </div>
+      )}
     </div>
   );
 };
+

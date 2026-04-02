@@ -6,7 +6,7 @@ import { IconBrandGithub, IconBrandLinkedin, IconMail, IconMapPin, IconCode } fr
 
 export const AboutMe = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
       
       {/* 1. Profile Card (Left Column, 1/3 width) */}
       <motion.div
@@ -14,14 +14,14 @@ export const AboutMe = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="lg:col-span-1 flex flex-col items-center justify-center p-8 rounded-3xl bg-neutral-100 dark:bg-white/5 border border-white/20 hover:border-orange-500/30 transition-all duration-300 relative overflow-hidden group h-full"
+        className="lg:col-span-1 flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl bg-neutral-100 dark:bg-white/5 border border-white/20 hover:border-orange-500/30 transition-all duration-300 relative overflow-hidden group h-full"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         {/* Glow Effect */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none" />
         
-        <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 rounded-full p-2 border-2 border-dashed border-orange-500/30">
+        <div className="relative w-32 h-32 sm:w-48 sm:h-48 mb-6 rounded-full p-2 border-2 border-dashed border-orange-500/30">
           <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
               <Image
                 src="/swastideep protfolio.jpg"
@@ -51,7 +51,7 @@ export const AboutMe = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="md:col-span-2 p-8 rounded-3xl bg-white dark:bg-black/20 border border-neutral-200 dark:border-white/10 hover:border-orange-500/30 transition-colors flex flex-col justify-center"
+          className="md:col-span-2 p-6 md:p-8 rounded-3xl bg-white dark:bg-black/20 border border-neutral-200 dark:border-white/10 hover:border-orange-500/30 transition-colors flex flex-col justify-center"
         >
           <h4 className="text-xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
             <span className="p-2 rounded-lg bg-orange-500/10 text-orange-500"><IconCode size={20} /></span>
@@ -60,7 +60,7 @@ export const AboutMe = () => {
           <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
             {`I'm a passionate developer focused on creating intuitive, scalable digital products. My approach combines clean code architecture with pixel-perfect design.`}
           </p>
-          <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
             {`I specialize in the React ecosystem (Next.js, Tailwind) and robust backend solutions (Node.js). I'm constantly exploring new technologies to build better user experiences.`}
           </p>
         </motion.div>

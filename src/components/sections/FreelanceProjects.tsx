@@ -8,7 +8,7 @@ import { freelanceProjects } from "@/constants/freelance";
 
 export const FreelanceProjects = () => {
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col gap-16 md:gap-24">
       {freelanceProjects.map((project, index) => (
         <motion.div
           key={project.title}
@@ -64,11 +64,11 @@ export const FreelanceProjects = () => {
               </div>
             </div>
             
-            <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white leading-tight tracking-tighter">
+            <h3 className="text-2xl md:text-5xl lg:text-6xl font-black text-neutral-900 dark:text-white leading-tight tracking-tighter">
               {project.title}
             </h3>
             
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               {project.description}
             </p>
 
