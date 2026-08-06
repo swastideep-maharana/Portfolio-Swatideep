@@ -2,6 +2,30 @@ import { Product } from "@/types/products";
 
 export const products: Product[] = [
   {
+    title: "Docmind - AI PDF Chat Companion",
+    description: "Docmind is an AI-powered PDF companion that allows users to upload PDF documents and have intelligent, context-aware conversations about them. Built with Next.js, Tailwind CSS, TypeScript, and the Gemini API.",
+    thumbnail: "/docmind.png",
+    images: ["/docmind.png"],
+    href: "https://docmind-ai-ochre.vercel.app/",
+    github: "https://github.com/swastideep-maharana/Docmind-ai",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini API", "Clerk", "Pinecone"],
+    slug: "docmind",
+    color: "from-teal-500 to-emerald-600",
+    content: "Docmind is an intelligent PDF assistant designed to extract information, summarize content, and answer questions from your documents. Utilizing next-generation vector search with Pinecone and LLM inference via the Google Gemini API, it lets you interact with PDFs like chatting with a human expert. Features include secure Clerk authentication, file upload processing, semantic search, and an interactive chat history. [Live](https://docmind-ai-ochre.vercel.app/) | [GitHub](https://github.com/swastideep-maharana/Docmind-ai)",
+  },
+  {
+    title: "BrowserPilot - Autonomous Web AI Agent",
+    description: "An AI-powered browser automation and web agent companion that executes complex web tasks autonomously. It translates natural language instructions into browser actions, featuring task management and visual feedback.",
+    thumbnail: "/BrowserPilot.png",
+    images: ["/BrowserPilot.png"],
+    href: "https://browser-pilot-iota.vercel.app/sign-in?redirect_url=https%3A%2F%2Fbrowser-pilot-iota.vercel.app%2F",
+    github: "https://github.com/swastideep-maharana/BrowserPilot",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Clerk", "Gemini API", "Puppeteer"],
+    slug: "browser-pilot",
+    color: "from-indigo-600 to-purple-600",
+    content: "BrowserPilot is an autonomous AI agent capable of navigating the web on your behalf. By converting natural language inputs into structured browser commands, it can log in to websites, extract information, fill forms, and automate repetitive tasks. It integrates Clerk for authentication, Puppeteer/Playwright for automation execution, and the Gemini API for cognitive planning and decision making. [Live](https://browser-pilot-iota.vercel.app/sign-in?redirect_url=https%3A%2F%2Fbrowser-pilot-iota.vercel.app%2F) | [GitHub](https://github.com/swastideep-maharana/BrowserPilot)",
+  },
+  {
     title: "Resonance - AI Voice Cloning & TTS Platform",
     description: "A premium, high-performance platform for AI-powered Text-to-Speech (TTS) and Voice Cloning. Built with Next.js 16, React 19, and Tailwind CSS 4, it offers a sleek, professional experience for creating and managing lifelike AI voices.",
     thumbnail: "/resonance.png",

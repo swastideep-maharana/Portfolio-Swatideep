@@ -54,6 +54,32 @@ export const gridItems = [
 
 export const projects = [
   {
+    id: 8,
+    title: "Docmind - AI PDF Chat Companion",
+    des: "Docmind is an AI-powered PDF companion that allows users to upload PDF documents and have intelligent, context-aware conversations about them. Built with Next.js, Tailwind CSS, TypeScript, and the Gemini API.",
+    img: "/docmind.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/c.svg",
+    ],
+    link: "https://docmind-ai-ochre.vercel.app/",
+  },
+  {
+    id: 9,
+    title: "BrowserPilot - Autonomous Web AI Agent",
+    des: "An AI-powered browser automation and web agent companion that executes complex web tasks autonomously. It translates natural language instructions into browser actions, featuring task management and visual feedback.",
+    img: "/BrowserPilot.png",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/c.svg",
+    ],
+    link: "https://browser-pilot-iota.vercel.app/sign-in?redirect_url=https%3A%2F%2Fbrowser-pilot-iota.vercel.app%2F",
+  },
+  {
     id: 1,
     title:
       "AI Tutor Companion AI Learning Companion transforms education through personalized AI tutoring and voice interaction. Built with Next.js and TypeScript, it offers interactive learning sessions with voice-enabled AI companions that adapt to your learning style.",
